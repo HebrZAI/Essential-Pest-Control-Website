@@ -418,8 +418,8 @@ section { padding: 96px 24px; }
   gap: 24px;
 }
 .compliance-card {
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.16);
+  background: #fff;
+  border: 1px solid rgba(20,23,26,.08);
   border-radius: var(--radius);
   padding: 30px 26px;
 }
@@ -433,8 +433,8 @@ section { padding: 96px 24px; }
   justify-content: center;
   margin-bottom: 18px;
 }
-.compliance-card h3 { color: #fff; font-size: 1.12rem; }
-.compliance-card p { color: rgba(228,238,231,.78); font-size: .92rem; margin-bottom: 0; }
+.compliance-card h3 { color: var(--ink); font-size: 1.12rem; }
+.compliance-card p { color: var(--ink); font-size: .92rem; margin-bottom: 0; }
 
 /* =============== CONTACT =============== */
 .contact-grid {
