@@ -181,7 +181,7 @@ section { padding: 96px 24px; }
 /* =============== HERO =============== */
 .hero {
   position: relative;
-  min-height: max(500px, 80vh);
+  min-height: max(500px, 100vh);
   display: flex;
   align-items: center;
   justify-content: center;
