@@ -8,9 +8,10 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto:wght@400;500;600&display=swap"></noscript>
+<link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="style.css"></noscript>
 </head>
 <body>
 
@@ -18,7 +19,7 @@
 <header class="site-header" id="top">
   <div class="nav-inner">
     <a href="#top" class="logo">
-      <img src="images/logo.png" alt="Essential Pest Control logo">
+      <img src="images/logo.webp" alt="Essential Pest Control logo" width="300" height="96">
     </a>
 
     <nav class="nav-links" id="navLinks">
@@ -42,7 +43,7 @@
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="hero-media">
-    <img src="images/Hero.png" alt="Modern residential home protected by Essential Pest Control" loading="eager">
+    <img src="images/Hero.webp" alt="Modern residential home protected by Essential Pest Control" width="1920" height="960" loading="eager">
     <div class="hero-overlay"></div>
   </div>
 
@@ -85,7 +86,7 @@
 
   <div class="sector-grid">
     <article class="sector-card" id="residential">
-      <img src="images/residentialpest1.png" alt="Residential pest control service" loading="lazy">
+      <img src="images/residentialpest1.webp" alt="Residential pest control service" width="1200" height="798" loading="lazy">
       <div class="sector-body">
         <span class="sector-tag">Residential</span>
         <h3>For your home &amp; family</h3>
@@ -101,7 +102,7 @@
     </article>
 
     <article class="sector-card" id="commercial">
-      <img src="images/commercialkitchen.png" alt="Commercial pest control service" loading="lazy">
+      <img src="images/commercialkitchen.webp" alt="Commercial pest control service" width="1000" height="545" loading="lazy">
       <div class="sector-body">
         <span class="sector-tag sector-tag-alt">Commercial &amp; Industrial</span>
         <h3>For your Business</h3>
@@ -127,7 +128,7 @@
   <div class="services-grid">
     <div class="service-card">
       <span class="service-icon">
-        <img src="images/noants.jpg" alt="Ants">
+        <img src="images/noants.webp" alt="Ants" width="300" height="162" loading="lazy">
       </span>
       <h3>Ants</h3>
       <p>Colony elimination using targeted baiting, nest drilling and residual treatments at entry points and nesting sites.</p>
@@ -135,7 +136,7 @@
 
     <div class="service-card">
       <span class="service-icon">
-        <img src="images/noroach.jpg" alt="Cockroaches">
+        <img src="images/noroach.webp" alt="Cockroaches" width="300" height="162" loading="lazy">
       </span>
       <h3>Cockroaches</h3>
       <p>Professional cockroach control with perimeter treatments and colony-destroying baits and sprays for lasting results We use cutting edge industry products that stay active for 3 months after treatment.</p>
@@ -143,7 +144,7 @@
 
     <div class="service-card">
       <span class="service-icon">
-        <img src="images/norats.jpg" alt="Rodents">
+        <img src="images/norats.webp" alt="Rodents" width="300" height="162" loading="lazy">
       </span>
       <h3>Rodents</h3>
       <p>We install sealed bait external stations, internal baitstations, and specialised ceiling treatments, combining 3 of the most advanced types of rodenticides currently available to pest control specialists. This ensures lasting success and getting rid of the infestation.</p>
@@ -151,7 +152,7 @@
 
     <div class="service-card">
       <span class="service-icon">
-        <img src="images/nobedbug.png" alt="Bedbugs">
+        <img src="images/nobedbug.webp" alt="Bedbugs" width="300" height="162" loading="lazy">
       </span>
       <h3>Bedbugs</h3>
       <p> Our bedbug treatments ensure that you can still sleep in the same bed that we treated that morning, no more itching, no smell.</p>
@@ -159,7 +160,7 @@
 
     <div class="service-card">
       <span class="service-icon">
-        <img src="images/notermite.jpg" alt="Termite Proofing">
+        <img src="images/notermite.webp" alt="Termite Proofing" width="300" height="162" loading="lazy">
       </span>
       <h3>Termite Proofing</h3>
       <p>Pre, during, and post-construction foundation treatment &amp; timber treatments engineered to SANS standards with 5 &amp; 10 year warranties.</p>
@@ -167,7 +168,7 @@
 
     <div class="service-card">
       <span class="service-icon">
-        <img src="images/noweed.jpg" alt="Weed Control">
+        <img src="images/noweed.webp" alt="Weed Control" width="300" height="162" loading="lazy">
       </span>
       <h3>Weed Control</h3>
       <p>Herbicide programmes for driveways, paving and grounds alongside general pest management.</p>
@@ -377,7 +378,7 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <a href="#top" class="logo logo-footer">
-      <img src="images/logo.png" alt="Essential Pest Control logo">
+      <img src="images/logo.webp" alt="Essential Pest Control logo" width="300" height="96" loading="lazy">
     </a>
     <p>&copy; <span id="year"></span> Essential Pest Control. Fully licensed pest control operators serving Gauteng, South Africa.</p>
   </div>
