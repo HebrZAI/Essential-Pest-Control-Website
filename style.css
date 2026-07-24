@@ -46,7 +46,18 @@
   src: url('fonts/Roboto-SemiBold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
+}
+@font-face {
+  font-family: 'Roboto Fallback';
+  src: local('Arial');
+  font-weight: 400;
+  font-style: normal;
+  font-display: optional;
+  size-adjust: 100.06%;
+  ascent-override: 92.77%;
+  descent-override: 24.41%;
+  line-gap-override: 0%;
 }
 :root {
   --forest: #005F73;
@@ -64,7 +75,7 @@
   --shadow: 0 10px 30px rgba(16, 63, 65, 0.14);
 
   --font-display: 'Montserrat', 'Montserrat Fallback', sans-serif;
-  --font-body: 'Roboto', sans-serif;
+  --font-body: 'Roboto', 'Roboto Fallback', sans-serif;
 
   --radius: 14px;
   --container: 1180px;
