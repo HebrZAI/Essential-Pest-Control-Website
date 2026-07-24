@@ -317,10 +317,10 @@ section { padding: 96px 24px; }
   left: 0;
   width: 40px;
   height: 20px;
-  color: #3B2417;
+  color: #E63946;
   z-index: 5;
   pointer-events: none;
-  animation: bug-crawl 7s ease-in-out infinite;
+  animation: bug-crawl 16s ease-in-out infinite;
 }
 .cert-bug svg {
   display: block;
