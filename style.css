@@ -181,16 +181,22 @@ section { padding: 96px 24px; }
 /* =============== HERO =============== */
 .hero {
   position: relative;
-  min-height: max(500px, 100vh);
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
   overflow: hidden;
   contain: layout paint;
+  background-color: #0B4B5A;
 }
 .hero-media { position: absolute; inset: 0; }
-.hero-media img { width: 100%; height: 100%; object-fit: cover; }
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
 .hero-overlay {
   position: absolute; inset: 0;
   background: linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.45) 40%, rgba(0,0,0,.55) 100%);
@@ -596,6 +602,7 @@ textarea { resize: vertical; }
   .nav-actions .btn-whatsapp { padding: 8px; font-size: .78rem; min-width: 44px; }
 
   section { padding: 56px 18px; }
+  .hero { min-height: 60vh; }
   .hero-actions { flex-direction: column; align-items: stretch; }
   .hero-badges { gap: 20px; margin-top: 22px; }
   .hero-badge-item img { height: 45px; }
