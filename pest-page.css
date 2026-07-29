@@ -1,0 +1,426 @@
+/* =========================================================
+   Essential Pest Control — Pest & Suburb Page Additions
+   Extends style.css. Uses the same design tokens
+   (--forest, --amber, --cream, --ink, etc.) — include
+   this file AFTER style.css on every pest/suburb page.
+========================================================= */
+
+/* =============== BREADCRUMB =============== */
+.breadcrumb {
+  font-size: .82rem;
+  color: #fff;
+  margin-bottom: 18px;
+}
+
+.breadcrumb a {
+  color: var(--amber);
+  font-weight: 600;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* =============== PAGE HERO =============== */
+.page-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  min-height: 550px;
+  overflow: hidden;
+  background-color: #004d61;
+}
+
+/* Left: text column — completely clear of the image */
+.hero-text {
+  width: 50%;
+  max-width: 600px;
+  z-index: 2;
+  padding-left: 5%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.page-hero .eyebrow {
+  color: var(--amber);
+}
+
+.page-hero h1 {
+  color: #fff;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  margin-bottom: 16px;
+}
+
+.page-hero-sub {
+  color: rgba(255, 255, 255, .88);
+  font-size: 1.05rem;
+}
+
+.page-hero .hero-actions {
+  margin-top: 28px;
+}
+
+/* Right: image container — full height from top to bottom edge */
+.hero-image-container {
+  position: absolute;
+  right: 2%;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 48%;
+  z-index: 1;
+}
+
+/* Orange outer wrapper — angled slice spanning full top-to-bottom */
+.hero-image-outer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #D96B27;
+  /* Orange background creates the side borders */
+  clip-path: polygon(38% 0%, 88% 0%, 62% 100%, 12% 100%);
+}
+
+/* Inner image container — flush on top/bottom (0px), 12px inset on sides for side borders */
+.hero-image-bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 12px;
+  right: 12px;
+  width: calc(100% - 24px);
+  height: 100%;
+  clip-path: polygon(39% 0%, 87% 0%, 61% 100%, 13% 100%);
+  overflow: hidden;
+}
+
+/* Photo fills inner wrapper edge-to-edge */
+.hero-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* =============== GENERIC CONTENT BAND =============== */
+.content-band {
+  padding: 80px 24px;
+  background: var(--cream);
+}
+
+.content-band-alt {
+  background: var(--forest);
+  color: #fff;
+}
+
+.content-band-alt .eyebrow {
+  color: var(--amber);
+}
+
+.content-band-alt h2 {
+  color: #fff;
+}
+
+.content-narrow {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.content-narrow h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--ink);
+}
+
+.content-narrow p {
+  font-size: 1.02rem;
+}
+
+/* =============== SIGNS GRID =============== */
+.signs-grid {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.sign-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px 22px;
+}
+
+.sign-card h3 {
+  font-size: 1rem;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.sign-card p {
+  font-size: .9rem;
+  margin-bottom: 0;
+}
+
+/* =============== PROCESS STEPS =============== */
+.process-grid {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding: 0 24px;
+}
+
+.process-step {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 22px;
+}
+
+.process-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--amber);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.process-step h3 {
+  color: var(--ink);
+  font-size: 1.02rem;
+}
+
+.process-step p {
+  color: var(--muted);
+  font-size: .9rem;
+  margin-bottom: 0;
+}
+
+/* =============== FAQ =============== */
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.faq-item {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 26px;
+}
+
+.faq-item h3 {
+  font-size: 1.02rem;
+  color: var(--forest);
+  margin-bottom: 8px;
+}
+
+.faq-item p {
+  margin-bottom: 0;
+  font-size: .95rem;
+}
+
+/* =============== RELATED PESTS / AREAS LINK CARDS =============== */
+.related-pests {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.pest-link-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 26px;
+  background: #fff;
+  border: 1.5px solid var(--forest);
+  border-radius: 999px;
+  color: var(--forest);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: .92rem;
+  transition: background .18s ease, color .18s ease, transform .18s ease;
+}
+
+.pest-link-card:hover {
+  background: var(--forest);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.pest-link-card-alt {
+  border-color: var(--amber);
+  color: var(--amber-deep);
+}
+
+.pest-link-card-alt:hover {
+  background: var(--amber);
+  color: #fff;
+}
+
+/* =============== FINAL CTA BAND =============== */
+.cta-band {
+  background: var(--forest);
+  color: #fff;
+  text-align: center;
+  padding: 80px 24px;
+}
+
+.cta-band h2 {
+  color: #fff;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.cta-band p {
+  max-width: 560px;
+  margin: 0 auto 8px;
+  color: rgba(220, 239, 242, 0.9);
+}
+
+.cta-band-actions {
+  justify-content: center;
+  margin-top: 24px;
+}
+
+/* =============== PEST PAGE FOOTER OVERRIDE =============== */
+.pest-page .site-footer {
+  background: #fff;
+  color: var(--ink);
+  border-top: 1px solid var(--border);
+}
+
+.pest-page .site-footer p {
+  color: var(--muted);
+}
+
+/* =============== RESPONSIVE =============== */
+@media (max-width: 900px) {
+
+  .signs-grid,
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Mobile Hero Container - Full Width Stack */
+  .page-hero {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    /* Forces children to stretch 100% wide */
+    min-height: auto !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* Compact text spacing */
+  .hero-text {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 10px 20px 16px !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-text .breadcrumb {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .hero-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin-top: 16px !important;
+  }
+
+  /* Full-width Image Banner (Stretches Left-to-Right) */
+  .hero-image-container {
+    position: relative !important;
+    inset: auto !important;
+    /* Resets desktop top/bottom/left/right */
+    width: 100% !important;
+    /* Spans 100% left to right */
+    max-width: 100% !important;
+    height: 120px !important;
+    margin: 16px 0 0 0 !important;
+    border-top: 4px solid #D96B27 !important;
+    /* Top orange line */
+    border-bottom: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    transform: none !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Strip desktop angled clip-paths & outer background */
+  .hero-image-outer {
+    clip-path: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* Reset inner image container bounds */
+  .hero-image-bg {
+    position: relative !important;
+    inset: 0 !important;
+    /* Clears desktop left: 12px offset */
+    width: 100% !important;
+    height: 100% !important;
+    clip-path: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Force photo to cover the full banner space and auto-crop */
+  .hero-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .signs-grid,
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .content-band,
+  .cta-band {
+    padding: 40px 16px;
+  }
+
+  .hero-text {
+    padding-top: 8px !important;
+  }
+
+  .hero-image-container {
+    height: 100px !important;
+    /* Sleek profile on phones */
+  }
+}
