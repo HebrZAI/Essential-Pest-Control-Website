@@ -1,7 +1,7 @@
 /* =========================================================
-   Essential Pest Control — Pest & Suburb Page Additions
+   Essential Pest Control - Pest & Suburb Page Additions
    Extends style.css. Uses the same design tokens
-   (--forest, --amber, --cream, --ink, etc.) — include
+   (--forest, --amber, --cream, --ink, etc.) - include
    this file AFTER style.css on every pest/suburb page.
 ========================================================= */
 
@@ -23,24 +23,34 @@
 
 /* =============== PAGE HERO =============== */
 .page-hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   position: relative;
-  width: 100%;
-  min-height: 550px;
+  display: grid;
+  align-items: stretch;
+  grid-template-columns: minmax(0, 52%) minmax(0, 48%);
+  grid-template-rows: 500px;
+  width: min(calc(100% - 64px), 1500px);
+  height: 500px;
+  margin: 20px auto 0;
+  padding: 0;
   overflow: hidden;
-  background-color: #004d61;
+  background: var(--forest);
+  border-radius: 22px;
+  box-shadow: 0 14px 34px rgba(0, 61, 73, .12);
 }
 
-/* Left: text column — completely clear of the image */
 .hero-text {
-  width: 50%;
-  max-width: 600px;
-  z-index: 2;
-  padding-left: 5%;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 52%;
+  min-width: 0;
+  min-height: 0;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 28px clamp(38px, 4vw, 60px);
 }
 
 .page-hero .eyebrow {
@@ -49,54 +59,56 @@
 
 .page-hero h1 {
   color: #fff;
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
-  margin-bottom: 16px;
+  font-size: clamp(2rem, 2.65vw, 2.65rem);
+  line-height: 1.12;
+  margin-bottom: 14px;
+  overflow-wrap: break-word;
 }
 
 .page-hero-sub {
+  max-width: 590px;
   color: rgba(255, 255, 255, .88);
-  font-size: 1.05rem;
+  font-size: 1rem;
 }
 
 .page-hero .hero-actions {
-  margin-top: 28px;
+  position: absolute;
+  left: clamp(38px, 4vw, 60px);
+  bottom: 28px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 0;
 }
 
-/* Right: image container — full height from top to bottom edge */
 .hero-image-container {
   position: absolute;
-  right: 2%;
   top: 0;
+  right: 0;
   bottom: 0;
-  height: 100%;
   width: 48%;
-  z-index: 1;
+  min-width: 0;
+  min-height: 0;
+  height: auto;
+  align-self: stretch;
+  overflow: hidden;
+  border-left: 4px solid var(--amber);
 }
 
-/* Orange outer wrapper — angled slice spanning full top-to-bottom */
 .hero-image-outer {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-color: #D96B27;
-  /* Orange background creates the side borders */
-  clip-path: polygon(38% 0%, 88% 0%, 62% 100%, 12% 100%);
+  position: absolute;
+  inset: 0;
 }
 
-/* Inner image container — flush on top/bottom (0px), 12px inset on sides for side borders */
 .hero-image-bg {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 12px;
-  right: 12px;
-  width: calc(100% - 24px);
+  inset: 0;
+  width: 100%;
   height: 100%;
-  clip-path: polygon(39% 0%, 87% 0%, 61% 100%, 13% 100%);
   overflow: hidden;
 }
 
-/* Photo fills inner wrapper edge-to-edge */
 .hero-image {
   display: block;
   width: 100%;
@@ -112,7 +124,11 @@
 }
 
 .content-band-alt {
-  background: var(--forest);
+  background-color: var(--forest);
+  background-image: url("images/16_9Shield.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: #fff;
 }
 
@@ -278,7 +294,11 @@
 
 /* =============== FINAL CTA BAND =============== */
 .cta-band {
-  background: var(--forest);
+  background-color: var(--forest);
+  background-image: url("images/16_9Shield.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: #fff;
   text-align: center;
   padding: 80px 24px;
@@ -300,17 +320,6 @@
   margin-top: 24px;
 }
 
-/* =============== PEST PAGE FOOTER OVERRIDE =============== */
-.pest-page .site-footer {
-  background: #fff;
-  color: var(--ink);
-  border-top: 1px solid var(--border);
-}
-
-.pest-page .site-footer p {
-  color: var(--muted);
-}
-
 /* =============== RESPONSIVE =============== */
 @media (max-width: 900px) {
 
@@ -319,87 +328,136 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Mobile Hero Container - Full Width Stack */
   .page-hero {
-    flex-direction: column !important;
-    align-items: stretch !important;
-    /* Forces children to stretch 100% wide */
-    min-height: auto !important;
-    padding: 0 !important;
-    overflow: hidden !important;
+    grid-template-columns: minmax(0, 55%) minmax(0, 45%);
+    width: min(calc(100% - 36px), var(--container));
+    height: 480px;
+    grid-template-rows: 480px;
+    margin-top: 18px;
   }
 
-  /* Compact text spacing */
   .hero-text {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 10px 20px 16px !important;
-    text-align: center !important;
-    box-sizing: border-box !important;
+    width: 55%;
+    padding: 26px 34px;
+  }
+
+  .hero-image-container {
+    width: 45%;
   }
 
   .hero-text .breadcrumb {
-    margin-top: 10px !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 14px;
   }
 
-  .hero-actions {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 10px !important;
-    margin-top: 16px !important;
+  .page-hero h1 {
+    font-size: clamp(1.8rem, 4.2vw, 2.5rem);
   }
 
-  /* Full-width Image Banner (Stretches Left-to-Right) */
+  .page-hero-sub {
+    font-size: .98rem;
+  }
+
+  .page-hero .hero-actions {
+    left: 34px;
+    bottom: 26px;
+    gap: 10px;
+    margin-top: 0;
+  }
+
+  .page-hero .hero-actions .btn {
+    padding: 12px 18px;
+    font-size: .86rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    height: auto;
+    width: calc(100% - 20px);
+    margin-top: 10px;
+    border-radius: 16px;
+  }
+
+  .hero-text {
+    position: relative;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    width: auto;
+    height: auto;
+    padding: 24px 20px 26px;
+  }
+
+  .hero-text .breadcrumb {
+    margin-bottom: 10px;
+    font-size: .76rem;
+  }
+
+  .page-hero .eyebrow {
+    max-width: 30ch;
+    margin-bottom: 9px;
+    font-size: .7rem;
+    line-height: 1.45;
+  }
+
+  .page-hero h1 {
+    max-width: 18ch;
+    margin-bottom: 12px;
+    font-size: clamp(1.7rem, 7.2vw, 2.1rem);
+    line-height: 1.08;
+    letter-spacing: -.025em;
+  }
+
+  .page-hero-sub {
+    max-width: 34ch;
+    margin-bottom: 0;
+    font-size: .93rem;
+    line-height: 1.5;
+  }
+
+  .page-hero .hero-actions {
+    position: static;
+    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .page-hero .hero-actions .btn {
+    flex: 1 1 0;
+    width: auto;
+    min-width: 0;
+    min-height: 44px;
+    margin-top: 0;
+    padding: 10px 8px;
+    font-size: clamp(.72rem, 3.4vw, .86rem);
+    align-self: stretch;
+  }
+
+  .page-hero .hero-actions .btn-whatsapp {
+    gap: 5px;
+  }
+
+  .page-hero .hero-actions .btn-whatsapp svg {
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+  }
+
   .hero-image-container {
-    position: relative !important;
-    inset: auto !important;
-    /* Resets desktop top/bottom/left/right */
-    width: 100% !important;
-    /* Spans 100% left to right */
-    max-width: 100% !important;
-    height: 120px !important;
-    margin: 16px 0 0 0 !important;
-    border-top: 4px solid #D96B27 !important;
-    /* Top orange line */
-    border-bottom: none !important;
-    border-left: none !important;
-    border-right: none !important;
-    transform: none !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Strip desktop angled clip-paths & outer background */
-  .hero-image-outer {
-    clip-path: none !important;
-    border-radius: 0 !important;
-    background: transparent !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-  }
-
-  /* Reset inner image container bounds */
-  .hero-image-bg {
-    position: relative !important;
-    inset: 0 !important;
-    /* Clears desktop left: 12px offset */
-    width: 100% !important;
-    height: 100% !important;
-    clip-path: none !important;
-    border-radius: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  /* Force photo to cover the full banner space and auto-crop */
-  .hero-image {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: center !important;
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    width: auto;
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    border-top: 3px solid var(--amber);
+    border-left: 0;
   }
 }
 
@@ -416,11 +474,21 @@
   }
 
   .hero-text {
-    padding-top: 8px !important;
+    padding: 24px 20px 26px;
+  }
+}
+
+@media (max-width: 380px) {
+  .page-hero {
+    width: calc(100% - 12px);
+    border-radius: 14px;
   }
 
-  .hero-image-container {
-    height: 100px !important;
-    /* Sleek profile on phones */
+  .hero-text {
+    padding-inline: 17px;
+  }
+
+  .page-hero h1 {
+    font-size: 1.62rem;
   }
 }
