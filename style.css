@@ -82,10 +82,19 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
+  overscroll-behavior-x: none;
+}
 
 body {
   margin: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
   font-family: var(--font-body);
   color: var(--ink);
   background: var(--cream);
@@ -716,9 +725,12 @@ section { padding: 96px 24px; }
   gap: 56px;
   align-items: start;
 }
+.contact-grid > * { min-width: 0; }
 .contact-copy { max-width: 460px; }
 .contact-details { display: flex; flex-direction: column; gap: 16px; margin: 28px 0 32px; }
 .contact-details li { display: flex; align-items: center; gap: 12px; font-weight: 500; }
+.contact-details a,
+.contact-details span { min-width: 0; overflow-wrap: anywhere; }
 .detail-icon {
   width: 38px; height: 38px;
   border-radius: 50%;
@@ -731,6 +743,8 @@ section { padding: 96px 24px; }
 }
 
 .contact-form {
+  width: 100%;
+  min-width: 0;
   background: #fff;
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -745,6 +759,8 @@ section { padding: 96px 24px; }
 .form-row-split > div { flex: 1; display: flex; flex-direction: column; gap: 6px; }
 label { font-size: .84rem; font-weight: 600; color: var(--ink); }
 input, select, textarea {
+  width: 100%;
+  min-width: 0;
   font-family: var(--font-body);
   font-size: .95rem;
   padding: 12px 14px;
