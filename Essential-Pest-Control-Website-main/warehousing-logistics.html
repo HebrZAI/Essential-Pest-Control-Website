@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warehouse &amp; Logistics Pest Control Gauteng | Essential Pest Control</title>
+  <meta name="description" content="Commercial pest control for warehouses, distribution centres and logistics facilities across Gauteng. Rodent monitoring, stored-product pest control, reporting and planned site protection.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <link rel="preload" href="fonts/Montserrat-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Roboto-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pest-page.css">
+  <link rel="stylesheet" href="commercial-page.css">
+</head>
+
+<body class="commercial-page">
+
+  <!-- ============ NAV (same as homepage, links point back to index.html) ============ -->
+  <header class="site-header" id="top">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.webp" alt="Essential Pest Control logo" width="300" height="96">
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html#residential">Residential</a>
+        <div class="nav-dropdown commercial-dropdown">
+          <a href="commercial.html" class="commercial-link">Commercial</a>
+          <button type="button" class="commercial-menu-toggle" aria-label="Show commercial categories" aria-expanded="false"
+            onclick="const isOpen = this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', isOpen)">▼</button>
+          <ul class="dropdown-menu">
+            <li><a href="restaurants.html">Restaurants &amp; Fast Food</a></li>
+            <li><a href="construction.html">Construction &amp; Development</a></li>
+            <li><a href="body-corporates.html">Body Corporates &amp; Property Managers</a></li>
+            <li><a href="schools-creches.html">Schools &amp; Creches</a></li>
+            <li><a href="warehousing-logistics.html" aria-current="page">Warehousing &amp; Logistics</a></li>
+            <li><a href="offices-retail.html">Offices &amp; Retail</a></li>
+            <li><a href="healthcare-aged-care.html">Healthcare &amp; Aged Care</a></li>
+            <li><a href="hospitality-guesthouses.html">Hospitality &amp; Guesthouses</a></li>
+            <li><a href="horse-stables-equestrian.html">Horse Stables &amp; Equestrian Facilities</a></li>
+          </ul>
+        </div>
+
+        <!-- Services dropdown -->
+        <div class="nav-dropdown" id="servicesDropdown">
+          <button class="dropdown-toggle" id="dropdownToggle" aria-haspopup="true"
+            aria-expanded="false">Services</button>
+          <ul class="dropdown-menu" id="dropdownMenu" role="menu">
+            <li><a href="ants.html" role="menuitem">Ants</a></li>
+            <li><a href="cockroaches.html" role="menuitem">Cockroaches</a></li>
+            <li><a href="rodents.html" role="menuitem">Rodents</a></li>
+            <li><a href="bedbugs.html" role="menuitem">Bedbugs</a></li>
+            <li><a href="termite-proofing.html" role="menuitem">Termite Proofing</a></li>
+            <li><a href="weed-control.html" role="menuitem">Weed Control</a></li>
+          </ul>
+        </div>
+
+        <a href="blog.html">Blog</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-whatsapp" href="https://wa.me/27686022225" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path fill="currentColor"
+              d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.82L2 22l5.4-1.42a9.87 9.87 0 0 0 4.64 1.18h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.15-1.53-1.15-2.92 0-1.39.72-2.07.98-2.35.24-.28.53-.35.71-.35.18 0 .35 0 .5.01.16.01.38-.06.6.46.24.56.8 1.95.87 2.09.07.14.11.3.02.49-.09.19-.14.3-.28.46-.14.16-.28.36-.4.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.53.72 1.79.85.26.14.44.2.5.31.06.12.06.65-.18 1.33Z" />
+          </svg>
+          <span>WhatsApp Us</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ PAGE HERO ============ -->
+  <section class="page-hero">
+    <div class="hero-text">
+      <p class="breadcrumb"><a href="index.html">Home</a> / <a href="commercial.html">Commercial</a> / Warehousing &amp; Logistics</p>
+      <p class="eyebrow">Warehouses, Distribution Centres &amp; Logistics Facilities</p>
+      <h1>Your Stock Should Move Through the Warehouse. Pests Should Not.</h1>
+      <p class="page-hero-sub">Open loading bays, constant deliveries and large storage areas give pests opportunities that are easy to miss. We help Gauteng warehouse and logistics operators identify those risks, protect stock and maintain a clear service record without slowing down receiving or dispatch.</p>
+      <div class="hero-actions">
+        <a href="commercial.html#contact" class="btn btn-primary">Contact Us</a>
+        <a class="btn btn-whatsapp btn-whatsapp-lg" href="https://wa.me/27686022225" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.82L2 22l5.4-1.42a9.87 9.87 0 0 0 4.64 1.18h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.15-1.53-1.15-2.92 0-1.39.72-2.07.98-2.35.24-.28.53-.35.71-.35.18 0 .35 0 .5.01.16.01.38-.06.6.46.24.56.8 1.95.87 2.09.07.14.11.3.02.49-.09.19-.14.3-.28.46-.14.16-.28.36-.4.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.53.72 1.79.85.26.14.44.2.5.31.06.12.06.65-.18 1.33Z"/></svg>
+          <span>WhatsApp Us</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-image-container">
+      <div class="hero-image-outer">
+        <div class="hero-image-bg">
+          <img src="images/Warehouses.webp" alt="Pest control inspection inside a modern Gauteng distribution warehouse" class="hero-image" width="1536" height="1024">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMMERCIAL IMPACT ============ -->
+  <section class="cost-band">
+    <div class="cost-band-heading">
+      <p class="eyebrow eyebrow-dark">Small signs can signal costly exposure</p>
+      <h2>A Pest Problem Can Travel Further Than the Affected Pallet</h2>
+      <p>Contamination, damaged packaging and droppings can affect stock decisions, customer relationships and the time your team spends isolating or investigating goods.</p>
+    </div>
+    <div class="cost-grid">
+      <div class="cost-card">
+        <h3>Stock loss and damaged packaging</h3>
+        <p>Rodents and stored-product insects can damage cartons, wrapping and goods. Even suspected contamination may force stock to be quarantined or written off.</p>
+      </div>
+      <div class="cost-card">
+        <h3>Customer and audit pressure</h3>
+        <p>Clients expect a clean, controlled storage environment. Missing records or repeated activity can turn a manageable issue into a difficult operational conversation.</p>
+      </div>
+      <div class="cost-card">
+        <h3>Disruption across the facility</h3>
+        <p>Reactive treatments can interrupt picking, receiving and dispatch. Planned monitoring helps problems get addressed before they spread through busy zones.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RISK ZONES ============ -->
+  <section class="services" id="coverage">
+    <div class="section-heading">
+      <p class="eyebrow eyebrow-dark">Follow the movement of stock and pests</p>
+      <h2>High-Risk Areas We Inspect and Monitor</h2>
+      <div class="perimeter-rule"></div>
+    </div>
+    <div class="pest-risk-grid">
+      <div class="pest-risk-card"><span class="pest-risk-icon">01</span><h3>Loading bays &amp; roller doors</h3><p>Frequently open access points allow rodents, birds and flying insects to enter while goods and vehicles move through the site.</p></div>
+      <div class="pest-risk-card"><span class="pest-risk-icon">02</span><h3>Racking &amp; pallet storage</h3><p>Long runs of stock create concealed travel routes and areas where damaged packaging, droppings or insect activity can go unnoticed.</p></div>
+      <div class="pest-risk-card"><span class="pest-risk-icon">03</span><h3>Receiving &amp; returns</h3><p>Incoming stock, returned goods and reusable packaging may introduce activity. Early inspection helps prevent pests from moving deeper into storage.</p></div>
+      <div class="pest-risk-card"><span class="pest-risk-icon">04</span><h3>Perimeters &amp; service yards</h3><p>Boundary lines, drains, vegetation, waste points, parked trailers and neighbouring properties can all influence pressure around the building.</p></div>
+      <div class="pest-risk-card"><span class="pest-risk-icon">05</span><h3>Staff kitchens &amp; ablutions</h3><p>Food, water and waste in break areas can support cockroaches, ants, flies and rodents away from the main storage floor.</p></div>
+      <div class="pest-risk-card"><span class="pest-risk-icon">06</span><h3>Roof voids &amp; high-level structures</h3><p>Beams, ledges and roof spaces can shelter birds or rodents and may sit above stock, workstations or vehicle routes.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ OPERATIONS FIT ============ -->
+  <section class="checklist-band">
+    <div class="section-heading">
+      <p class="eyebrow">Designed around active operations</p>
+      <h2>Pest Control That Works With Your Warehouse</h2>
+      <div class="perimeter-rule perimeter-rule-light"></div>
+    </div>
+    <div class="checklist-grid">
+      <div class="checklist-item"><span class="checklist-check">✓</span><div><h3>Mapped monitoring points</h3><p>Monitoring locations are selected around site risk, stock movement, access points and evidence-not placed at random.</p></div></div>
+      <div class="checklist-item"><span class="checklist-check">✓</span><div><h3>Servicing around receiving and dispatch</h3><p>Visit timing and access are planned with your operational team to avoid unnecessary interference with vehicles, pickers and loading activity.</p></div></div>
+      <div class="checklist-item"><span class="checklist-check">✓</span><div><h3>Trend-focused inspections</h3><p>Recurring evidence matters. We look for changes in activity so attention can be shifted to the source or developing pressure point.</p></div></div>
+      <div class="checklist-item"><span class="checklist-check">✓</span><div><h3>Clear corrective recommendations</h3><p>Where proofing, waste, housekeeping, drainage or stock practices contribute to risk, those findings are recorded for action.</p></div></div>
+      <div class="checklist-item"><span class="checklist-check">✓</span><div><h3>Targeted treatment selection</h3><p>The method is matched to the pest, goods stored and affected zone, with consideration for people, equipment and normal facility use.</p></div></div>
+      <div class="checklist-item"><span class="checklist-check">✓</span><div><h3>Multi-site consistency</h3><p>Operators with several Gauteng facilities can maintain site-specific scopes while using a consistent reporting and communication approach.</p></div></div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section class="timeline-band">
+    <div class="section-heading">
+      <p class="eyebrow eyebrow-dark">Built from the site outward</p>
+      <h2>How We Establish Warehouse Pest Protection</h2>
+      <div class="perimeter-rule"></div>
+    </div>
+    <div class="timeline">
+      <div class="timeline-step"><span class="timeline-num">1</span><h3>Understand the operation</h3><p>We review the goods stored, operating hours, delivery flow, waste handling, neighbouring risks and any customer or site requirements.</p></div>
+      <div class="timeline-step"><span class="timeline-num">2</span><h3>Inspect internal and external pressure points</h3><p>The assessment covers the perimeter, loading zones, racking, stock condition, high-level areas, staff facilities and signs of pest movement.</p></div>
+      <div class="timeline-step"><span class="timeline-num">3</span><h3>Set the control and monitoring plan</h3><p>We define suitable monitoring points, treatment areas, service frequency, access arrangements and responsibilities for corrective actions.</p></div>
+      <div class="timeline-step"><span class="timeline-num">4</span><h3>Service, record and adjust</h3><p>Each visit builds a clearer picture. Findings are documented and the program is adjusted when activity, stock patterns or site conditions change.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ REPORTING ============ -->
+  <section class="compliance-band">
+    <div class="compliance-inner">
+      <div>
+        <p class="eyebrow">Records your operations team can use</p>
+        <h2>More Than a Tick on a Service Schedule</h2>
+        <p>A useful pest report should help your team see where activity was found, what was done and which site condition still needs attention.</p>
+      </div>
+      <div class="compliance-list">
+        <div class="compliance-list-item"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="m9 16.2-3.5-3.5L4.1 14.1 9 19 20.3 7.7l-1.4-1.4z"/></svg><p><strong>Visit and treatment records</strong> showing inspected areas, findings and work completed.</p></div>
+        <div class="compliance-list-item"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="m9 16.2-3.5-3.5L4.1 14.1 9 19 20.3 7.7l-1.4-1.4z"/></svg><p><strong>Activity observations</strong> that help identify repeat pressure around particular zones or access points.</p></div>
+        <div class="compliance-list-item"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="m9 16.2-3.5-3.5L4.1 14.1 9 19 20.3 7.7l-1.4-1.4z"/></svg><p><strong>Corrective-action recommendations</strong> covering proofing, stock, waste, cleaning, drainage and external conditions.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMMON PESTS ============ -->
+  <section class="services" id="pests">
+    <div class="section-heading">
+      <p class="eyebrow eyebrow-dark">Common warehouse pressure</p>
+      <h2>Pests We Help Gauteng Facilities Control</h2>
+      <div class="perimeter-rule"></div>
+    </div>
+    <div class="cost-grid">
+      <div class="cost-card"><h3>Rats &amp; mice</h3><p>Rodents exploit loading doors, wall gaps, drains, roof spaces and quiet storage zones, causing contamination and packaging damage.</p></div>
+      <div class="cost-card"><h3>Stored-product insects</h3><p>Beetles, moths and weevils may arrive in or spread through susceptible dry goods. Correct identification is essential before deciding on treatment.</p></div>
+      <div class="cost-card"><h3>Birds, cockroaches &amp; flying insects</h3><p>Birds use roof structures and open bays, while cockroaches and flies concentrate around food, waste, moisture and staff areas.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="cost-band" id="faq">
+    <div class="section-heading">
+      <p class="eyebrow eyebrow-dark">Questions from warehouse and logistics teams</p>
+      <h2>Warehousing &amp; Logistics Pest Control FAQs</h2>
+      <div class="perimeter-rule"></div>
+    </div>
+    <div class="faq-accordion">
+      <details><summary>Can you service the warehouse without stopping operations?</summary><p>In many cases, yes. We agree on safe access, active work zones and suitable service timing with your facility contact before the visit. Some treatments may require temporary control of a specific area.</p></details>
+      <details><summary>How often should a warehouse receive pest control?</summary><p>Frequency depends on the stored goods, building condition, delivery volume, surrounding environment and pest history. We recommend a schedule after assessing the actual site risk.</p></details>
+      <details><summary>Can incoming goods bring pests into the facility?</summary><p>Yes. Pallets, cartons, returned stock and vehicles can introduce rodents or insects. A strong receiving and inspection process supports the pest management program.</p></details>
+      <details><summary>Do you provide monitoring and service reports?</summary><p>Yes. Reports record relevant findings, inspected or treated areas and recommendations that can be retained by facility management.</p></details>
+      <details><summary>Can you assist several warehouses or depots?</summary><p>Yes. We can scope each location according to its individual risk while keeping communication and reporting consistent across a Gauteng network.</p></details>
+      <details><summary>What should we do if droppings or damaged stock are found?</summary><p>Isolate the affected goods and avoid disturbing evidence more than necessary. Record the location and contact us promptly so the surrounding area and likely movement routes can be assessed.</p></details>
+    </div>
+  </section>
+
+  <!-- ============ RELATED INDUSTRIES ============ -->
+  <section class="services">
+    <div class="section-heading">
+      <p class="eyebrow eyebrow-dark">Other commercial facilities we support</p>
+      <h2>Related Pest Control Services</h2>
+      <div class="perimeter-rule"></div>
+    </div>
+    <div class="related-industries">
+      <a href="construction.html" class="industry-link-card">Construction &amp; Development</a>
+      <a href="offices-retail.html" class="industry-link-card">Offices &amp; Retail</a>
+      <a href="restaurants.html" class="industry-link-card">Restaurants &amp; Fast Food</a>
+      <a href="body-corporates.html" class="industry-link-card">Body Corporates &amp; Property Managers</a>
+      <a href="healthcare-aged-care.html" class="industry-link-card">Healthcare &amp; Aged Care</a>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta-band">
+    <h2>Protect the Stock, the Site and the Next Delivery.</h2>
+    <p>Tell us what you store, where the facility is and what activity has been found. We will help you define the right inspection and servicing plan.</p>
+    <div class="hero-actions cta-band-actions">
+      <a href="commercial.html#contact" class="btn btn-primary">Contact Us</a>
+      <a class="btn btn-whatsapp btn-whatsapp-lg" href="https://wa.me/27686022225" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.82L2 22l5.4-1.42a9.87 9.87 0 0 0 4.64 1.18h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.15-1.53-1.15-2.92 0-1.39.72-2.07.98-2.35.24-.28.53-.35.71-.35.18 0 .35 0 .5.01.16.01.38-.06.6.46.24.56.8 1.95.87 2.09.07.14.11.3.02.49-.09.19-.14.3-.28.46-.14.16-.28.36-.4.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.53.72 1.79.85.26.14.44.2.5.31.06.12.06.65-.18 1.33Z"/></svg>
+        <span>WhatsApp Us</span>
+      </a>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-inner">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a href="index.html#top" class="logo-footer" aria-label="Essential Pest Control - back to top">
+            <img src="images/logo.webp" alt="Essential Pest Control" width="300" height="96" loading="lazy">
+          </a>
+          <p>Professional pest management for homes and businesses throughout Gauteng.</p>
+          <div class="footer-contact-actions">
+            <a href="tel:+27686022225" class="footer-contact-link">
+              <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true">
+                <path fill="currentColor" d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1Z" />
+              </svg>
+              <span><small>Call us</small>068 602 2225</span>
+            </a>
+            <a href="https://wa.me/27686022225" target="_blank" rel="noopener" class="footer-contact-link footer-whatsapp">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                <path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.82L2 22l5.4-1.42a9.87 9.87 0 0 0 4.64 1.18h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.15-1.53-1.15-2.92 0-1.39.72-2.07.98-2.35.24-.28.53-.35.71-.35.18 0 .35 0 .5.01.16.01.38-.06.6.46.24.56.8 1.95.87 2.09.07.14.11.3.02.49-.09.19-.14.3-.28.46-.14.16-.28.36-.4.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.53.72 1.79.85.26.14.44.2.5.31.06.12.06.65-.18 1.33Z" />
+              </svg>
+              <span><small>Message us</small>WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-nav">
+          <section class="footer-group">
+            <button class="footer-heading" type="button" aria-expanded="false" aria-controls="footer-services">
+              Services <span aria-hidden="true"></span>
+            </button>
+            <ul id="footer-services" class="footer-links">
+              <li><a href="ants.html">Ant Control</a></li>
+              <li><a href="cockroaches.html">Cockroach Control</a></li>
+              <li><a href="rodents.html">Rodent Control</a></li>
+              <li><a href="bedbugs.html">Bedbug Treatments</a></li>
+              <li><a href="termite-proofing.html">Termite Proofing</a></li>
+              <li><a href="weed-control.html">Weed Control</a></li>
+            </ul>
+          </section>
+
+          <section class="footer-group">
+            <button class="footer-heading" type="button" aria-expanded="false" aria-controls="footer-areas">
+              Service Areas <span aria-hidden="true"></span>
+            </button>
+            <ul id="footer-areas" class="footer-links footer-area-links">
+              <li><a href="index.html#areas">Johannesburg</a></li>
+              <li><a href="index.html#areas">Pretoria</a></li>
+              <li><a href="index.html#areas">Centurion</a></li>
+              <li><a href="index.html#areas">Midrand</a></li>
+              <li><a href="index.html#areas">East Rand</a></li>
+              <li><a href="index.html#areas">View all areas</a></li>
+            </ul>
+          </section>
+
+          <section class="footer-group">
+            <button class="footer-heading" type="button" aria-expanded="false" aria-controls="footer-explore">
+              Explore <span aria-hidden="true"></span>
+            </button>
+            <ul id="footer-explore" class="footer-links">
+              <li><a href="index.html#residential">Residential</a></li>
+              <li><a href="index.html#commercial">Commercial</a></li>
+              <li><a href="index.html#services">All Services</a></li>
+              <li><a href="blog.html">Pest Advice</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Essential Pest Control. Serving Gauteng, South Africa.</p>
+        <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ FLOATING WHATSAPP ============ -->
+  <a href="https://wa.me/27686022225" target="_blank" rel="noopener" class="whatsapp-float"
+    aria-label="WhatsApp Us">
+    <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+      <path fill="currentColor"
+        d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.82L2 22l5.4-1.42a9.87 9.87 0 0 0 4.64 1.18h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.15-1.53-1.15-2.92 0-1.39.72-2.07.98-2.35.24-.28.53-.35.71-.35.18 0 .35 0 .5.01.16.01.38-.06.6.46.24.56.8 1.95.87 2.09.07.14.11.3.02.49-.09.19-.14.3-.28.46-.14.16-.28.36-.4.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.53.72 1.79.85.26.14.44.2.5.31.06.12.06.65-.18 1.33Z" />
+    </svg>
+  </a>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ── Footer accordions (mobile) ──
+    const footerMediaQuery = window.matchMedia('(max-width: 760px)');
+    const footerHeadings = document.querySelectorAll('.footer-heading');
+
+    function syncFooterAccordions() {
+      footerHeadings.forEach(button => {
+        const panel = document.getElementById(button.getAttribute('aria-controls'));
+        button.setAttribute('aria-expanded', String(!footerMediaQuery.matches));
+        panel.classList.toggle('open', !footerMediaQuery.matches);
+      });
+    }
+
+    footerHeadings.forEach(button => {
+      button.addEventListener('click', () => {
+        if (!footerMediaQuery.matches) return;
+        const isOpen = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!isOpen));
+        document.getElementById(button.getAttribute('aria-controls')).classList.toggle('open', !isOpen);
+      });
+    });
+    footerMediaQuery.addEventListener('change', syncFooterAccordions);
+    syncFooterAccordions();
+
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close mobile menu when any regular link is clicked
+    document.querySelectorAll('.nav-links > a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // ── Services dropdown (desktop hover + mobile click) ──
+    const dropdownToggle = document.getElementById('dropdownToggle');
+    const servicesDropdown = document.getElementById('servicesDropdown');
+
+    dropdownToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = servicesDropdown.classList.toggle('open');
+      dropdownToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close dropdown when a menu link is clicked
+    document.querySelectorAll('#dropdownMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        servicesDropdown.classList.remove('open');
+        dropdownToggle.setAttribute('aria-expanded', 'false');
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!servicesDropdown.contains(e.target)) {
+        servicesDropdown.classList.remove('open');
+        dropdownToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  </script>
+
+</body>
+
+</html>

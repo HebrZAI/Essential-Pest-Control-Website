@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commercial Pest Control Gauteng | Essential Pest Control</title>
+  <meta name="description"
+    content="Compliance-ready pest control for restaurants, construction sites, body corporates, schools, warehouses and more across Gauteng. Audit-ready reports, DAFF-aligned protocols.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <link rel="preload" href="fonts/Montserrat-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Roboto-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preload" as="image" href="images/commercialkitchen.webp" fetchpriority="high">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Commercial Pest Control",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Essential Pest Control",
+    "url": "https://essentialpestcontrol.co.za/",
+    "telephone": "+27686022225",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Pretoria",
+      "addressRegion": "Gauteng",
+      "addressCountry": "ZA"
+    }
+  },
+  "areaServed": { "@type": "State", "name": "Gauteng" },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Commercial and Industrial businesses"
+  }
+}
+</script>
+</head>
+
+<body class="commercial-page">
+
+  <!-- ============ NAV ============ -->
+  <header class="site-header" id="top">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.webp" alt="Essential Pest Control logo" width="300" height="96">
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html#residential">Residential</a>
+        <div class="nav-dropdown commercial-dropdown">
+          <a href="commercial.html" class="commercial-link" aria-current="page">Commercial</a>
+          <button type="button" class="commercial-menu-toggle" aria-label="Show commercial categories" aria-expanded="false"
+            onclick="const isOpen = this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', isOpen)">▼</button>
+          <ul class="dropdown-menu">
+            <li><a href="restaurants.html">Restaurants &amp; Fast Food</a></li>
+            <li><a href="construction.html">Construction &amp; Development</a></li>
+            <li><a href="body-corporates.html">Body Corporates &amp; Property Managers</a></li>
+            <li><a href="schools-creches.html">Schools &amp; Creches</a></li>
+            <li><a href="warehousing-logistics.html">Warehousing &amp; Logistics</a></li>
+            <li><a href="offices-retail.html">Offices &amp; Retail</a></li>
+            <li><a href="healthcare-aged-care.html">Healthcare &amp; Aged Care</a></li>
+            <li><a href="hospitality-guesthouses.html">Hospitality &amp; Guesthouses</a></li>
+            <li><a href="horse-stables-equestrian.html">Horse Stables &amp; Equestrian Facilities</a></li>
+          </ul>
+        </div>
+
+        <!-- Services dropdown -->
+        <div class="nav-dropdown" id="servicesDropdown">
+          <button class="dropdown-toggle" id="dropdownToggle" aria-haspopup="true"
+            aria-expanded="false">Services</button>
+          <ul class="dropdown-menu" id="dropdownMenu" role="menu">
+            <li><a href="ants.html" role="menuitem">Ants</a></li>
+            <li><a href="cockroaches.html" role="menuitem">Cockroaches</a></li>
+            <li><a href="rodents.html" role="menuitem">Rodents</a></li>
+            <li><a href="bedbugs.html" role="menuitem">Bedbugs</a></li>
+            <li><a href="termite-proofing.html" role="menuitem">Termite Proofing</a></li>
+            <li><a href="weed-control.html" role="menuitem">Weed Control</a></li>
+          </ul>
+        </div>
+
+        <a href="blog.html">Blog</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-whatsapp" href="https://wa.me/27686022225" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path fill="currentColor"
+              d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.82L2 22l5.4-1.42a9.87 9.87 0 0 0 4.64 1.18h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.15-1.53-1.15-2.92 0-1.39.72-2.07.98-2.35.24-.28.53-.35.71-.35.18 0 .35 0 .5.01.16.01.38-.06.6.46.24.56.8 1.95.87 2.09.07.14.11.3.02.49-.09.19-.14.3-.28.46-.14.16-.28.36-.4.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.53.72 1.79.85.26.14.44.2.5.31.06.12.06.65-.18 1.33Z" />
+          </svg>
+          <span>WhatsApp Us</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-media">
+      <picture>
+        <img src="images/commercialkitchen.webp" alt="Commercial kitchen protected by Essential Pest Control"
+          width="1920" height="960" loading="eager" fetchpriority="high" sizes="100vw">
+      </picture>
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <p class="eyebrow">Gauteng &middot; Commercial &amp; Industrial Pest Control</p>
+      <h1>Pest Control Built Around Your Industry</h1>
+      <p class="hero-tagline">Compliant. Documented. On your schedule.</p>
+      <p class="hero-sub">Whatever you run - a kitchen, a construction site, a complex or a classroom - we
+        build a treatment programme around your compliance requirements, your traffic, and your hours. Fully
+        certified technicians, audit-ready reporting.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Contact Us</a>
+        <a class="btn btn-whatsapp btn-whatsapp-lg" href="https://wa.me/27686022225" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.82L2 22l5.4-1.42a9.87 9.87 0 0 0 4.64 1.18h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.15-1.53-1.15-2.92 0-1.39.72-2.07.98-2.35.24-.28.53-.35.71-.35.18 0 .35 0 .5.01.16.01.38-.06.6.46.24.56.8 1.95.87 2.09.07.14.11.3.02.49-.09.19-.14.3-.28.46-.14.16-.28.36-.4.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.53.72 1.79.85.26.14.44.2.5.31.06.12.06.65-.18 1.33Z" />
+          </svg>
+          WhatsApp Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CERTIFICATION CAROUSEL ============ -->
+  <div class="cert-wrap">
+    <section class="cert-strip" aria-label="Our certifications">
+      <div class="cert-track">
+        <div class="cert-set">
+          <span class="cert-chip">Certified Technicians</span>
+          <span class="cert-chip">Audit-Ready Reporting</span>
+          <span class="cert-chip">Dept. of Agriculture Approved</span>
+          <span class="cert-chip">Fully Insured</span>
+        </div>
+        <div class="cert-set" aria-hidden="true">
+          <span class="cert-chip">Certified Technicians</span>
+          <span class="cert-chip">Audit-Ready Reporting</span>
+          <span class="cert-chip">Dept. of Agriculture Approved</span>
+          <span class="cert-chip">Fully Insured</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ INDUSTRIES / NICHE GRID ============ -->
+  <section class="niche-intro" id="industries">
+    <div class="section-heading">
+      <p class="eyebrow eyebrow-dark">Who we serve</p>
+      <h2>Commercial Pest Control, By Industry</h2>
+      <div class="perimeter-rule"></div>
+      <p>Every sector brings its own pests, its own compliance demands and its own hours. Here's how we adapt our
+        programmes across the industries we work with most in Gauteng.</p>
+    </div>
+
+    <div class="niche-grid">
+      <article class="niche-card" id="restaurants">
+        <span class="niche-icon">
+          <svg viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              d="M6 2v6M10 2v6M6 8a2 2 0 0 0 4 0M8 8v14M15 2c-2 2-2 5 0 7s2 5 0 7v6" /></svg>
+        </span>
+        <h3>Restaurants &amp; Fast Food</h3>
+        <p>Department of Health-aligned kitchen programmes covering cockroaches, flies and rodents, with a
+          Certificate of Compliance issued on a 3-monthly cycle for your audits.</p>
+        <a href="restaurants.html" class="btn btn-learn-more">Learn More →</a>
+      </article>
+
+      <article class="niche-card" id="construction">
+        <span class="niche-icon">
+          <svg viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6" /></svg>
+        </span>
+        <h3>Construction &amp; Development</h3>
+        <p>Pre- and post-construction termite soil treatments engineered to SANS standards, plus site weed control
+          - timed around your build schedule, with 5 &amp; 10 year warranties.</p>
+        <a href="construction.html" class="btn btn-learn-more">Learn More →</a>
+      </article>
+
+      <article class="niche-card" id="body-corporates">
+        <span class="niche-icon">
+          <svg viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              d="M4 21V7l8-4 8 4v14M9 21v-6h6v6M9 11h.01M15 11h.01M9 15h.01M15 15h.01" /></svg>
+        </span>
+        <h3>Body Corporates &amp; Property Managers</h3>
+        <p>Scheduled maintenance contracts across common areas and units, with a single point of contact and
+          consolidated reporting for trustees and managing agents.</p>
+        <a href="body-corporates.html" class="btn btn-learn-more">Learn More →</a>
+      </article>
+
+      <article class="niche-card" id="schools">
+        <span class="niche-icon">
+          <svg viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              d="M12 14l9-5-9-5-9 5 9 5Zm0 0v7M3 9v6c0 1.5 4 3.5 9 3.5s9-2 9-3.5V9" /></svg>
+        </span>
+        <h3>Schools &amp; Creches</h3>
+        <p>Child-safe products only, treatments scheduled around school holidays and after-hours where possible, with
+          full documentation for your compliance file.</p>
+        <a href="schools-creches.html" class="btn btn-learn-more">Learn More →</a>
+      </article>
+
+      <article class="niche-card" id="warehousing">
+        <span class="niche-icon">
+          <svg viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              d="M3 7h18v13H3V7Zm0 0 3-4h12l3 4M8 11h8" /></svg>
+        </span>
+        <h3>Warehousing &amp; Logistics</h3>
+        <p>External bait stations, stored-product pest monitoring and rodent-proofing for distribution centres and
+          storage facilities, aligned with your stock protection requirements.</p>
+        <a href="warehousing-logistics.html" class="btn btn-learn-more">Learn More →</a>
+      </article>
+
+      <article class="niche-card" id="offices">
+        <span class="niche-icon">
+          <svg viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              d="M4 21V4h16v17M4 21h16M9 9h1M14 9h1M9 13h1M14 13h1M9 21v-4h6v4" /></svg>
+        </span>
+        <h3>Offices &amp; Retail</h3>
+        <p>Discreet, after-hours or weekend treatments so staff and customers are never disrupted - general
+          pest prevention for ants, cockroaches and rodents.</p>
+        <a href="offices-retail.html" class="btn btn-learn-more">Learn More →</a>
+      </article>
+
+      <article class="niche-card" id="healthcare">
+        <span class="niche-icon">
+          <svg viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9ZM9 12h6M12 9v6" /></svg>
+        </span>
+        <h3>Healthcare &amp; Aged Care</h3>
+        <p>Low-toxicity protocols suited to sensitive occupants, with the strict hygiene standards and reporting that
+          clinics, practices and care facilities need.</p>
+        <a href="healthcare-aged-care.html" class="btn btn-learn-more">Learn More →</a>
+      </article>
+
+      <article class="niche-card" id="hospitality">
+        <span class="niche-icon">
+          <svg viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              d="M3 21V10l9-7 9 7v11M9 21v-6h6v6M6 21v-9h12v9" /></svg>
+        </span>
+        <h3>Hospitality &amp; Guesthouses</h3>
+        <p>Proactive bedbug prevention and rapid-response treatment scheduled to protect guest experience and your
+          online reputation, not disrupt it.</p>
+        <a href="hospitality-guesthouses.html" class="btn btn-learn-more">Learn More →</a>
+      </article>
+
+      <article class="niche-card" id="equestrian">
+        <span class="niche-icon">
+          <svg viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              d="M3 21h18M5 21V10l7-6 7 6v11M8 21v-7h8v7M9 9h6" /></svg>
+        </span>
+        <h3>Horse Stables &amp; Equestrian Facilities</h3>
+        <p>Practical fly, rodent and feed-store pest management for stables, livery yards and riding schools, planned around horses, staff and daily yard routines.</p>
+        <a href="horse-stables-equestrian.html" class="btn btn-learn-more">Learn More →</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ COMPLIANCE ============ -->
+  <section class="compliance">
+    <div class="section-heading">
+      <p class="eyebrow">Why commercial clients choose us</p>
+      <h2>Fully licensed. Fully accountable.</h2>
+      <div class="perimeter-rule perimeter-rule-light"></div>
+      <p class="compliance-sub">Pest control touches food safety, health and property - so we hold ourselves to
+        the regulatory standards &amp; protocols as set out by the Department of Agriculture, Forestry &amp;
+        Fisheries.</p>
+    </div>
+
+    <div class="compliance-grid">
+      <div class="compliance-card">
+        <div class="stamp">
+          <svg viewBox="0 0 64 64" width="34" height="34">
+            <g fill="none" stroke="currentColor" stroke-width="2.5">
+              <circle cx="32" cy="32" r="26" />
+              <path d="M20 32l8 8 16-18" stroke-linecap="round" stroke-linejoin="round" />
+            </g>
+          </svg>
+        </div>
+        <h3>Audit-Ready Service &amp; Treatment Logs</h3>
+        <p>Every visit is logged with the product, dosage and area treated, and issued as a Certificate of Compliance
+          - ready for your next health or safety audit.</p>
+      </div>
+
+      <div class="compliance-card">
+        <div class="stamp">
+          <svg viewBox="0 0 64 64" width="34" height="34">
+            <g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M32 6l20 8v14c0 14-8.5 21.5-20 28C20.5 49.5 12 42 12 28V14Z" />
+              <path d="M25 31l5 5 10-11" />
+            </g>
+          </svg>
+        </div>
+        <h3>Registered &amp; Licensed PCOs</h3>
+        <p>Our technicians are registered, fully licensed Pest Control Operators, holding valid certification to
+          purchase, transport and apply regulated pesticides in South Africa.</p>
+      </div>
+
+      <div class="compliance-card">
+        <div class="stamp">
+          <svg viewBox="0 0 64 64" width="34" height="34">
+            <g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="32" cy="32" r="22" />
+              <path d="M32 18v14l10 6" />
+            </g>
+          </svg>
+        </div>
+        <h3>Scheduled After-Hours &amp; Weekend Call-Outs</h3>
+        <p>We work around your shifts, trading hours and compliance calendar - not the other way around, with
+          contracts tailored to how your site actually operates.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p class="eyebrow eyebrow-dark">Get in touch</p>
+        <h2>Request a commercial site quote</h2>
+        <p class="contact-copy">Tell us about your site and industry. We respond to every enquiry within one
+          business day, and quote commercial &amp; industrial sites individually based on square meterage and
+          service frequency.</p>
+
+        <ul class="contact-details">
+          <li>
+            <span class="detail-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20">
+                <path fill="currentColor"
+                  d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8Z" />
+              </svg>
+            </span>
+            <a href="tel:+27686022225">068 602 2225</a>
+          </li>
+          <li>
+            <span class="detail-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20">
+                <path fill="currentColor"
+                  d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 2v.01L12 13l8-6.99V6H4Zm0 2.4V18h16V8.4l-8 7-8-7Z" />
+              </svg>
+            </span>
+            <a href="mailto:info@essentialpestcontrol.co.za">info@essentialpestcontrol.co.za</a>
+          </li>
+          <li>
+            <span class="detail-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20">
+                <path fill="currentColor"
+                  d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7Zm0 9.7A2.7 2.7 0 1 1 12 6.3a2.7 2.7 0 0 1 0 5.4Z" />
+              </svg>
+            </span>
+            <span>Serving Johannesburg, Pretoria &amp; greater Gauteng</span>
+          </li>
+        </ul>
+
+        <a class="btn btn-whatsapp btn-whatsapp-lg" href="https://wa.me/27686022225" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path fill="currentColor"
+              d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.82L2 22l5.4-1.42a9.87 9.87 0 0 0 4.64 1.18h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.15-1.53-1.15-2.92 0-1.39.72-2.07.98-2.35.24-.28.53-.35.71-.35.18 0 .35 0 .5.01.16.01.38-.06.6.46.24.56.8 1.95.87 2.09.07.14.11.3.02.49-.09.19-.14.3-.28.46-.14.16-.28.36-.4.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.53.72 1.79.85.26.14.44.2.5.31.06.12.06.65-.18 1.33Z" />
+          </svg>
+          WhatsApp Us
+        </a>
+      </div>
+
+      <form class="contact-form" id="quoteForm" action="https://formspree.io/f/xjgnewdj" method="POST">
+        <div class="form-row">
+          <label for="company">Company / site name</label>
+          <input type="text" id="company" name="company" placeholder="Your business name" required>
+        </div>
+        <div class="form-row">
+          <label for="name">Contact name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-row form-row-split">
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="082 000 0000" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="industry">Industry</label>
+          <select id="industry" name="industry" required>
+            <option value="" disabled selected>Select one</option>
+            <option value="restaurant-fast-food">Restaurant / Fast Food</option>
+            <option value="construction">Construction / Development</option>
+            <option value="body-corporate">Body Corporate / Property Management</option>
+            <option value="school-creche">School / Creche</option>
+            <option value="warehousing">Warehousing / Logistics</option>
+            <option value="office-retail">Office / Retail</option>
+            <option value="healthcare">Healthcare / Aged Care</option>
+            <option value="hospitality">Hospitality / Guesthouse</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="message">Tell us about the site &amp; problem</label>
+          <textarea id="message" name="message" rows="4"
+            placeholder="e.g. Rodents in the storeroom, need a quarterly compliance contract..." required></textarea>
+        </div>
+        <div class="form-message" id="formMessage" aria-live="polite"></div>
+        <button type="submit" class="btn btn-primary btn-block">Contact Us</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ SERVICE AREAS ============ -->
+  <section class="areas" id="areas">
+    <div class="section-heading">
+      <p class="eyebrow eyebrow-dark">Where we operate</p>
+      <h2>Serving Gauteng, area by area</h2>
+      <div class="perimeter-rule"></div>
+      <p class="areas-sub">Based centrally in Gauteng, our technicians cover the following areas - not listed
+        here? Message us on WhatsApp to check availability.</p>
+    </div>
+
+    <div class="areas-grid">
+      <div class="area-group">
+        <h3>Johannesburg</h3>
+        <ul class="area-list">
+          <li>Sandton</li>
+          <li>Rosebank</li>
+          <li>Randburg</li>
+          <li>Fourways</li>
+          <li>Bryanston</li>
+          <li>Midrand</li>
+          <li>Roodepoort</li>
+        </ul>
+      </div>
+      <div class="area-group">
+        <h3>Pretoria</h3>
+        <ul class="area-list">
+          <li>Centurion</li>
+          <li>Hatfield</li>
+          <li>Menlyn</li>
+          <li>Brooklyn</li>
+          <li>Waterkloof</li>
+          <li>Faerie Glen</li>
+          <li>Silver Lakes</li>
+        </ul>
+      </div>
+      <div class="area-group">
+        <h3>East Rand</h3>
+        <ul class="area-list">
+          <li>Kempton Park</li>
+          <li>Benoni</li>
+          <li>Boksburg</li>
+          <li>Germiston</li>
+          <li>Edenvale</li>
+          <li>Bedfordview</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-inner">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a href="index.html" class="logo-footer" aria-label="Essential Pest Control - back to top">
+            <img src="images/logo.webp" alt="Essential Pest Control" width="300" height="96" loading="lazy">
+          </a>
+          <p>Professional pest management for homes and businesses throughout Gauteng.</p>
+          <div class="footer-contact-actions">
+            <a href="tel:+27686022225" class="footer-contact-link">
+              <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true">
+                <path fill="currentColor" d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1Z" />
+              </svg>
+              <span><small>Call us</small>068 602 2225</span>
+            </a>
+            <a href="https://wa.me/27686022225" target="_blank" rel="noopener" class="footer-contact-link footer-whatsapp">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                <path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.82L2 22l5.4-1.42a9.87 9.87 0 0 0 4.64 1.18h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.15-1.53-1.15-2.92 0-1.39.72-2.07.98-2.35.24-.28.53-.35.71-.35.18 0 .35 0 .5.01.16.01.38-.06.6.46.24.56.8 1.95.87 2.09.07.14.11.3.02.49-.09.19-.14.3-.28.46-.14.16-.28.36-.4.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.53.72 1.79.85.26.14.44.2.5.31.06.12.06.65-.18 1.33Z" />
+              </svg>
+              <span><small>Message us</small>WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-nav">
+          <section class="footer-group">
+            <button class="footer-heading" type="button" aria-expanded="false" aria-controls="footer-industries">
+              Industries <span aria-hidden="true"></span>
+            </button>
+            <ul id="footer-industries" class="footer-links">
+              <li><a href="commercial.html#industries">Restaurants &amp; Fast Food</a></li>
+              <li><a href="commercial.html#industries">Construction</a></li>
+              <li><a href="commercial.html#industries">Body Corporates</a></li>
+              <li><a href="commercial.html#industries">Schools &amp; Creches</a></li>
+              <li><a href="commercial.html#industries">See all industries</a></li>
+            </ul>
+          </section>
+
+          <section class="footer-group">
+            <button class="footer-heading" type="button" aria-expanded="false" aria-controls="footer-areas">
+              Service Areas <span aria-hidden="true"></span>
+            </button>
+            <ul id="footer-areas" class="footer-links footer-area-links">
+              <li><a href="#areas">Johannesburg</a></li>
+              <li><a href="#areas">Pretoria</a></li>
+              <li><a href="#areas">Centurion</a></li>
+              <li><a href="#areas">Midrand</a></li>
+              <li><a href="#areas">East Rand</a></li>
+              <li><a href="#areas">View all areas</a></li>
+            </ul>
+          </section>
+
+          <section class="footer-group">
+            <button class="footer-heading" type="button" aria-expanded="false" aria-controls="footer-explore">
+              Explore <span aria-hidden="true"></span>
+            </button>
+            <ul id="footer-explore" class="footer-links">
+              <li><a href="index.html#residential">Residential</a></li>
+              <li><a href="commercial.html">Commercial</a></li>
+              <li><a href="index.html#services">All Services</a></li>
+              <li><a href="blog.html">Pest Advice</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Essential Pest Control. Serving Gauteng, South Africa.</p>
+        <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ FLOATING WHATSAPP ============ -->
+  <a href="https://wa.me/27686022225" target="_blank" rel="noopener" class="whatsapp-float"
+    aria-label="WhatsApp Us">
+    <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+      <path fill="currentColor"
+        d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.82L2 22l5.4-1.42a9.87 9.87 0 0 0 4.64 1.18h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.15-1.53-1.15-2.92 0-1.39.72-2.07.98-2.35.24-.28.53-.35.71-.35.18 0 .35 0 .5.01.16.01.38-.06.6.46.24.56.8 1.95.87 2.09.07.14.11.3.02.49-.09.19-.14.3-.28.46-.14.16-.28.36-.4.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.53.72 1.79.85.26.14.44.2.5.31.06.12.06.65-.18 1.33Z" />
+    </svg>
+  </a>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ── Footer accordions (mobile) ──
+    const footerMediaQuery = window.matchMedia('(max-width: 760px)');
+    const footerHeadings = document.querySelectorAll('.footer-heading');
+
+    function syncFooterAccordions() {
+      footerHeadings.forEach(button => {
+        const panel = document.getElementById(button.getAttribute('aria-controls'));
+        button.setAttribute('aria-expanded', String(!footerMediaQuery.matches));
+        panel.classList.toggle('open', !footerMediaQuery.matches);
+      });
+    }
+
+    footerHeadings.forEach(button => {
+      button.addEventListener('click', () => {
+        if (!footerMediaQuery.matches) return;
+        const isOpen = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!isOpen));
+        document.getElementById(button.getAttribute('aria-controls')).classList.toggle('open', !isOpen);
+      });
+    });
+    footerMediaQuery.addEventListener('change', syncFooterAccordions);
+    syncFooterAccordions();
+
+    // ── Mobile nav toggle ──
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+    // Close mobile menu when any regular link is clicked
+    document.querySelectorAll('.nav-links > a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // ── Services dropdown (desktop hover + mobile click) ──
+    const dropdownToggle = document.getElementById('dropdownToggle');
+    const servicesDropdown = document.getElementById('servicesDropdown');
+
+    dropdownToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = servicesDropdown.classList.toggle('open');
+      dropdownToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close dropdown when a menu link is clicked
+    document.querySelectorAll('#dropdownMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        servicesDropdown.classList.remove('open');
+        dropdownToggle.setAttribute('aria-expanded', 'false');
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!servicesDropdown.contains(e.target)) {
+        servicesDropdown.classList.remove('open');
+        dropdownToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Close dropdown on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        servicesDropdown.classList.remove('open');
+        dropdownToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    const quoteForm = document.getElementById('quoteForm');
+    const formMessage = document.getElementById('formMessage');
+
+    quoteForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      formMessage.textContent = 'Sending...';
+      formMessage.classList.remove('error');
+
+      try {
+        const response = await fetch(quoteForm.action, {
+          method: 'POST',
+          body: new FormData(quoteForm),
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          formMessage.textContent = 'Thanks! Your quote request has been sent.';
+          quoteForm.reset();
+        } else {
+          const data = await response.json();
+          const message = data?.error || 'There was a problem sending the form. Please try again.';
+          formMessage.textContent = message;
+          formMessage.classList.add('error');
+        }
+      } catch (error) {
+        formMessage.textContent = 'Network error. Please try again later.';
+        formMessage.classList.add('error');
+      }
+    });
+  </script>
+
+</body>
+
+</html>

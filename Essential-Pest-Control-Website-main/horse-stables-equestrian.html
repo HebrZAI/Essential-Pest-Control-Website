@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horse Stable &amp; Equestrian Pest Control Gauteng | Essential Pest Control</title>
+  <meta name="description" content="Pest control for horse stables, livery yards, riding schools and equestrian facilities across Gauteng. Practical fly, rodent and feed-store pest management planned around horses.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <link rel="preload" href="fonts/Montserrat-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Roboto-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pest-page.css">
+  <link rel="stylesheet" href="commercial-page.css">
+  <link rel="preload" as="image" href="images/Horse Stable.webp" fetchpriority="high">
+</head>
+
+<body class="commercial-page">
+
+  <!-- ============ NAV (same as homepage, links point back to index.html) ============ -->
+  <header class="site-header" id="top">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.webp" alt="Essential Pest Control logo" width="300" height="96">
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html#residential">Residential</a>
+        <div class="nav-dropdown commercial-dropdown">
+          <a href="commercial.html" class="commercial-link">Commercial</a>
+          <button type="button" class="commercial-menu-toggle" aria-label="Show commercial categories" aria-expanded="false"
+            onclick="const isOpen = this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', isOpen)">▼</button>
+          <ul class="dropdown-menu">
+            <li><a href="restaurants.html">Restaurants &amp; Fast Food</a></li>
+            <li><a href="construction.html">Construction &amp; Development</a></li>
+            <li><a href="body-corporates.html">Body Corporates &amp; Property Managers</a></li>
+            <li><a href="schools-creches.html">Schools &amp; Creches</a></li>
+            <li><a href="warehousing-logistics.html">Warehousing &amp; Logistics</a></li>
+            <li><a href="offices-retail.html">Offices &amp; Retail</a></li>
+            <li><a href="healthcare-aged-care.html">Healthcare &amp; Aged Care</a></li>
+            <li><a href="hospitality-guesthouses.html">Hospitality &amp; Guesthouses</a></li>
+            <li><a href="horse-stables-equestrian.html" aria-current="page">Horse Stables &amp; Equestrian Facilities</a></li>
+          </ul>
+        </div>
+
+        <!-- Services dropdown -->
+        <div class="nav-dropdown" id="servicesDropdown">
+          <button class="dropdown-toggle" id="dropdownToggle" aria-haspopup="true"
+            aria-expanded="false">Services</button>
+          <ul class="dropdown-menu" id="dropdownMenu" role="menu">
+            <li><a href="ants.html" role="menuitem">Ants</a></li>
+            <li><a href="cockroaches.html" role="menuitem">Cockroaches</a></li>
+            <li><a href="rodents.html" role="menuitem">Rodents</a></li>
+            <li><a href="bedbugs.html" role="menuitem">Bedbugs</a></li>
+            <li><a href="termite-proofing.html" role="menuitem">Termite Proofing</a></li>
+            <li><a href="weed-control.html" role="menuitem">Weed Control</a></li>
+          </ul>
+        </div>
+
+        <a href="blog.html">Blog</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-whatsapp" href="https://wa.me/27686022225" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path fill="currentColor"
+              d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.82L2 22l5.4-1.42a9.87 9.87 0 0 0 4.64 1.18h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.15-1.53-1.15-2.92 0-1.39.72-2.07.98-2.35.24-.28.53-.35.71-.35.18 0 .35 0 .5.01.16.01.38-.06.6.46.24.56.8 1.95.87 2.09.07.14.11.3.02.49-.09.19-.14.3-.28.46-.14.16-.28.36-.4.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.53.72 1.79.85.26.14.44.2.5.31.06.12.06.65-.18 1.33Z" />
+          </svg>
+          <span>WhatsApp Us</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ PAGE HERO ============ -->
+  <section class="page-hero">
+    <div class="hero-text">
+      <p class="breadcrumb"><a href="index.html">Home</a> / <a href="commercial.html">Commercial</a> / Horse Stables &amp; Equestrian Facilities</p>
+      <p class="eyebrow">Stables, Livery Yards, Riding Schools &amp; Equestrian Estates</p>
+      <h1>Protect Your Horses Without Letting Pests Take Over the Yard.</h1>
+      <p class="page-hero-sub">Feed, bedding, manure and water make equestrian properties naturally attractive to flies, rodents and other pests. We help Gauteng stable owners and yard managers control that pressure with a practical programme planned around horses, staff and daily routines.</p>
+      <div class="hero-actions">
+        <a href="commercial.html#contact" class="btn btn-primary">Contact Us</a>
+        <a class="btn btn-whatsapp btn-whatsapp-lg" href="https://wa.me/27686022225" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.82L2 22l5.4-1.42a9.87 9.87 0 0 0 4.64 1.18h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.15-1.53-1.15-2.92 0-1.39.72-2.07.98-2.35.24-.28.53-.35.71-.35.18 0 .35 0 .5.01.16.01.38-.06.6.46.24.56.8 1.95.87 2.09.07.14.11.3.02.49-.09.19-.14.3-.28.46-.14.16-.28.36-.4.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.53.72 1.79.85.26.14.44.2.5.31.06.12.06.65-.18 1.33Z"/></svg>
+          <span>WhatsApp Us</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-image-container">
+      <div class="hero-image-outer">
+        <div class="hero-image-bg">
+          <img src="images/Horse Stable.webp" alt="Clean horse stables at an equestrian facility in Gauteng"
+            class="hero-image" width="1536" height="1024" loading="eager" fetchpriority="high">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMMERCIAL IMPACT ============ -->
+  <section class="cost-band">
+    <div class="cost-band-heading">
+      <p class="eyebrow eyebrow-dark">A healthier, more manageable yard</p>
+      <h2>Pests Affect More Than the Appearance of a Stable</h2>
+      <p>Persistent pest activity can unsettle horses, contaminate feed and create avoidable work for grooms, instructors and yard managers.</p>
+    </div>
+    <div class="cost-grid">
+      <div class="cost-card">
+        <h3>Horse comfort and wellbeing</h3>
+        <p>Heavy fly and mosquito pressure can cause constant irritation, interfere with rest and make horses difficult to handle in stalls and work areas.</p>
+      </div>
+      <div class="cost-card">
+        <h3>Feed contamination and waste</h3>
+        <p>Rodents and stored-product insects can foul or damage feed. Affected bags may need to be discarded, increasing costs and disrupting feeding routines.</p>
+      </div>
+      <div class="cost-card">
+        <h3>Reputation and client confidence</h3>
+        <p>Owners boarding horses expect a well-run facility. Visible rats, excessive flies or contaminated storage areas quickly undermine confidence in the yard.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RISK ZONES ============ -->
+  <section class="services" id="coverage">
+    <div class="section-heading">
+      <p class="eyebrow eyebrow-dark">Look beyond the individual stall</p>
+      <h2>High-Risk Areas Around an Equestrian Property</h2>
+      <div class="perimeter-rule"></div>
+    </div>
+    <div class="pest-risk-grid">
+      <div class="pest-risk-card"><span class="pest-risk-icon">01</span><h3>Stalls &amp; stable passages</h3><p>Spilt feed, damp bedding, water troughs and sheltered edges can support flies, ants, cockroaches and rodents close to horses.</p></div>
+      <div class="pest-risk-card"><span class="pest-risk-icon">02</span><h3>Feed rooms &amp; storage</h3><p>Open bags, loose grain and clutter attract rats, mice and stored-product insects. Rodent-proof storage and early detection are essential.</p></div>
+      <div class="pest-risk-card"><span class="pest-risk-icon">03</span><h3>Manure and bedding areas</h3><p>Manure piles, used bedding and slow removal cycles create major fly-breeding pressure, especially during warm or wet Gauteng weather.</p></div>
+      <div class="pest-risk-card"><span class="pest-risk-icon">04</span><h3>Tack rooms &amp; offices</h3><p>Quiet rooms provide shelter for rodents and crawling insects, with the potential for damage to stored equipment, wiring and personal items.</p></div>
+      <div class="pest-risk-card"><span class="pest-risk-icon">05</span><h3>Wash bays, drains &amp; troughs</h3><p>Standing water, leaking fittings and organic build-up can support flies, mosquitoes and cockroaches around heavily used areas.</p></div>
+      <div class="pest-risk-card"><span class="pest-risk-icon">06</span><h3>Perimeters &amp; paddock edges</h3><p>Long grass, vegetation, neighbouring land, refuse and damaged structures influence rodent, tick and other pest pressure around the yard.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ OPERATIONS FIT ============ -->
+  <section class="checklist-band">
+    <div class="section-heading">
+      <p class="eyebrow">Designed around animals and daily yard routines</p>
+      <h2>A Practical, Horse-Conscious Approach</h2>
+      <div class="perimeter-rule perimeter-rule-light"></div>
+    </div>
+    <div class="checklist-grid">
+      <div class="checklist-item"><span class="checklist-check">✓</span><div><h3>Inspect before treating</h3><p>We first identify the pest, breeding or harbourage areas and contributing conditions so treatment is focused where it is genuinely needed.</p></div></div>
+      <div class="checklist-item"><span class="checklist-check">✓</span><div><h3>Plan around horses</h3><p>Horse locations, feed, water, ventilation and daily movement are considered before any treatment or monitoring point is introduced.</p></div></div>
+      <div class="checklist-item"><span class="checklist-check">✓</span><div><h3>Protect feed and water</h3><p>Products and equipment are kept away from exposed feed and drinking water, with clear preparation and re-entry instructions where required.</p></div></div>
+      <div class="checklist-item"><span class="checklist-check">✓</span><div><h3>Secure rodent control</h3><p>Where baiting is appropriate, tamper-resistant stations are carefully positioned and monitored away from horses, pets and routine stable activity.</p></div></div>
+      <div class="checklist-item"><span class="checklist-check">✓</span><div><h3>Reduce breeding conditions</h3><p>We highlight manure, moisture, feed handling, vegetation and proofing issues that can keep pest pressure high between visits.</p></div></div>
+      <div class="checklist-item"><span class="checklist-check">✓</span><div><h3>Use targeted methods</h3><p>The control method is matched to the pest and affected zone rather than relying on unnecessary blanket spraying throughout the property.</p></div></div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section class="timeline-band">
+    <div class="section-heading">
+      <p class="eyebrow eyebrow-dark">Built around the individual property</p>
+      <h2>How We Establish an Equestrian Pest Programme</h2>
+      <div class="perimeter-rule"></div>
+    </div>
+    <div class="timeline">
+      <div class="timeline-step"><span class="timeline-num">1</span><h3>Understand the yard</h3><p>We discuss horse numbers, stable routines, feed storage, manure handling, current pest activity and any sensitive animals or occupied areas.</p></div>
+      <div class="timeline-step"><span class="timeline-num">2</span><h3>Inspect the full pressure cycle</h3><p>The assessment covers stalls, feed rooms, waste areas, water sources, drains, buildings and the perimeter - not only the place where a pest was seen.</p></div>
+      <div class="timeline-step"><span class="timeline-num">3</span><h3>Agree on controls and responsibilities</h3><p>We set out suitable treatment and monitoring measures, visit timing, preparation requirements and practical actions for the yard team.</p></div>
+      <div class="timeline-step"><span class="timeline-num">4</span><h3>Monitor and refine</h3><p>Findings are recorded and the programme is adjusted as seasons, horse numbers, manure loads or pest activity change.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ REPORTING ============ -->
+  <section class="compliance-band">
+    <div class="compliance-inner">
+      <div>
+        <p class="eyebrow">Useful information for the yard manager</p>
+        <h2>Clear Records and Practical Recommendations</h2>
+        <p>A service report should make it easy to understand where activity was found, what was done and what can be improved before the next visit.</p>
+      </div>
+      <div class="compliance-list">
+        <div class="compliance-list-item"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="m9 16.2-3.5-3.5L4.1 14.1 9 19 20.3 7.7l-1.4-1.4z"/></svg><p><strong>Inspection and treatment records</strong> showing the areas checked, evidence found and work completed.</p></div>
+        <div class="compliance-list-item"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="m9 16.2-3.5-3.5L4.1 14.1 9 19 20.3 7.7l-1.4-1.4z"/></svg><p><strong>Activity observations</strong> that help distinguish isolated sightings from repeat pressure or seasonal patterns.</p></div>
+        <div class="compliance-list-item"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="m9 16.2-3.5-3.5L4.1 14.1 9 19 20.3 7.7l-1.4-1.4z"/></svg><p><strong>Corrective recommendations</strong> covering manure, moisture, feed storage, proofing, vegetation and cleaning practices.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMMON PESTS ============ -->
+  <section class="services" id="pests">
+    <div class="section-heading">
+      <p class="eyebrow eyebrow-dark">Common pressure around horse properties</p>
+      <h2>Pests We Help Equestrian Facilities Control</h2>
+      <div class="perimeter-rule"></div>
+    </div>
+    <div class="cost-grid">
+      <div class="cost-card"><h3>Flies &amp; mosquitoes</h3><p>Manure, wet bedding, drains and standing water can produce relentless flying-insect pressure around horses, people and stable buildings.</p></div>
+      <div class="cost-card"><h3>Rats, mice &amp; feed pests</h3><p>Rodents and insects are drawn to grain, pellets and supplements, contaminating feed and exploiting gaps around storage and stable structures.</p></div>
+      <div class="cost-card"><h3>Ants, cockroaches, ticks &amp; termites</h3><p>Moist service areas, vegetation and timber structures can support additional pest problems that require correct identification and targeted control.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="cost-band" id="faq">
+    <div class="section-heading">
+      <p class="eyebrow eyebrow-dark">Questions from stable owners and yard managers</p>
+      <h2>Horse Stable &amp; Equestrian Pest Control FAQs</h2>
+      <div class="perimeter-rule"></div>
+    </div>
+    <div class="faq-accordion">
+      <details><summary>Is pest control safe around horses?</summary><p>It can be carried out responsibly when the treatment is selected and planned for the actual site. We consider horse access, exposed feed and water, ventilation and stable routines, and provide preparation or re-entry instructions where needed.</p></details>
+      <details><summary>Will the horses need to leave the property?</summary><p>Usually not. They may need to be moved away from a specific treatment area for a stated period, depending on the pest, product and location. We confirm this before work begins.</p></details>
+      <details><summary>How can we reduce flies around the stables?</summary><p>Effective fly control usually combines targeted treatment with frequent manure removal, dry bedding, clean drains, repaired leaks and attention to other breeding material. Treatment alone cannot compensate for persistent breeding conditions.</p></details>
+      <details><summary>How often should an equestrian facility receive pest control?</summary><p>That depends on horse numbers, manure handling, feed storage, the surrounding environment and pest history. Some yards need seasonal help; higher-risk facilities benefit from scheduled monitoring.</p></details>
+      <details><summary>Can rodent bait be used around horses and stable pets?</summary><p>Rodent control must be carefully assessed. Where bait is suitable, it should be secured in tamper-resistant stations positioned to limit access by horses, pets, wildlife and unauthorised people.</p></details>
+      <details><summary>Do you treat feed rooms and tack rooms?</summary><p>Yes, after inspecting the area and identifying the pest. Exposed feed, supplements, equipment and water may need to be removed or protected before a targeted treatment is completed.</p></details>
+    </div>
+  </section>
+
+  <!-- ============ RELATED INDUSTRIES ============ -->
+  <section class="services">
+    <div class="section-heading">
+      <p class="eyebrow eyebrow-dark">Other commercial facilities we support</p>
+      <h2>Related Pest Control Services</h2>
+      <div class="perimeter-rule"></div>
+    </div>
+    <div class="related-industries">
+      <a href="construction.html" class="industry-link-card">Construction &amp; Development</a>
+      <a href="offices-retail.html" class="industry-link-card">Offices &amp; Retail</a>
+      <a href="restaurants.html" class="industry-link-card">Restaurants &amp; Fast Food</a>
+      <a href="body-corporates.html" class="industry-link-card">Body Corporates &amp; Property Managers</a>
+      <a href="healthcare-aged-care.html" class="industry-link-card">Healthcare &amp; Aged Care</a>
+      <a href="warehousing-logistics.html" class="industry-link-card">Warehousing &amp; Logistics</a>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta-band">
+    <h2>Give Your Horses a Better-Managed Environment.</h2>
+    <p>Tell us where your facility is, which pests you are seeing and how the yard operates. We will help you define a practical inspection and control plan.</p>
+    <div class="hero-actions cta-band-actions">
+      <a href="commercial.html#contact" class="btn btn-primary">Contact Us</a>
+      <a class="btn btn-whatsapp btn-whatsapp-lg" href="https://wa.me/27686022225" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.82L2 22l5.4-1.42a9.87 9.87 0 0 0 4.64 1.18h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.15-1.53-1.15-2.92 0-1.39.72-2.07.98-2.35.24-.28.53-.35.71-.35.18 0 .35 0 .5.01.16.01.38-.06.6.46.24.56.8 1.95.87 2.09.07.14.11.3.02.49-.09.19-.14.3-.28.46-.14.16-.28.36-.4.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.53.72 1.79.85.26.14.44.2.5.31.06.12.06.65-.18 1.33Z"/></svg>
+        <span>WhatsApp Us</span>
+      </a>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-inner">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a href="index.html#top" class="logo-footer" aria-label="Essential Pest Control - back to top">
+            <img src="images/logo.webp" alt="Essential Pest Control" width="300" height="96" loading="lazy">
+          </a>
+          <p>Professional pest management for homes and businesses throughout Gauteng.</p>
+          <div class="footer-contact-actions">
+            <a href="tel:+27686022225" class="footer-contact-link">
+              <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true">
+                <path fill="currentColor" d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1Z" />
+              </svg>
+              <span><small>Call us</small>068 602 2225</span>
+            </a>
+            <a href="https://wa.me/27686022225" target="_blank" rel="noopener" class="footer-contact-link footer-whatsapp">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                <path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.82L2 22l5.4-1.42a9.87 9.87 0 0 0 4.64 1.18h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.15-1.53-1.15-2.92 0-1.39.72-2.07.98-2.35.24-.28.53-.35.71-.35.18 0 .35 0 .5.01.16.01.38-.06.6.46.24.56.8 1.95.87 2.09.07.14.11.3.02.49-.09.19-.14.3-.28.46-.14.16-.28.36-.4.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.53.72 1.79.85.26.14.44.2.5.31.06.12.06.65-.18 1.33Z" />
+              </svg>
+              <span><small>Message us</small>WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-nav">
+          <section class="footer-group">
+            <button class="footer-heading" type="button" aria-expanded="false" aria-controls="footer-services">
+              Services <span aria-hidden="true"></span>
+            </button>
+            <ul id="footer-services" class="footer-links">
+              <li><a href="ants.html">Ant Control</a></li>
+              <li><a href="cockroaches.html">Cockroach Control</a></li>
+              <li><a href="rodents.html">Rodent Control</a></li>
+              <li><a href="bedbugs.html">Bedbug Treatments</a></li>
+              <li><a href="termite-proofing.html">Termite Proofing</a></li>
+              <li><a href="weed-control.html">Weed Control</a></li>
+            </ul>
+          </section>
+
+          <section class="footer-group">
+            <button class="footer-heading" type="button" aria-expanded="false" aria-controls="footer-areas">
+              Service Areas <span aria-hidden="true"></span>
+            </button>
+            <ul id="footer-areas" class="footer-links footer-area-links">
+              <li><a href="index.html#areas">Johannesburg</a></li>
+              <li><a href="index.html#areas">Pretoria</a></li>
+              <li><a href="index.html#areas">Centurion</a></li>
+              <li><a href="index.html#areas">Midrand</a></li>
+              <li><a href="index.html#areas">East Rand</a></li>
+              <li><a href="index.html#areas">View all areas</a></li>
+            </ul>
+          </section>
+
+          <section class="footer-group">
+            <button class="footer-heading" type="button" aria-expanded="false" aria-controls="footer-explore">
+              Explore <span aria-hidden="true"></span>
+            </button>
+            <ul id="footer-explore" class="footer-links">
+              <li><a href="index.html#residential">Residential</a></li>
+              <li><a href="index.html#commercial">Commercial</a></li>
+              <li><a href="index.html#services">All Services</a></li>
+              <li><a href="blog.html">Pest Advice</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Essential Pest Control. Serving Gauteng, South Africa.</p>
+        <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ FLOATING WHATSAPP ============ -->
+  <a href="https://wa.me/27686022225" target="_blank" rel="noopener" class="whatsapp-float"
+    aria-label="WhatsApp Us">
+    <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+      <path fill="currentColor"
+        d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.82L2 22l5.4-1.42a9.87 9.87 0 0 0 4.64 1.18h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.15-1.53-1.15-2.92 0-1.39.72-2.07.98-2.35.24-.28.53-.35.71-.35.18 0 .35 0 .5.01.16.01.38-.06.6.46.24.56.8 1.95.87 2.09.07.14.11.3.02.49-.09.19-.14.3-.28.46-.14.16-.28.36-.4.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.53.72 1.79.85.26.14.44.2.5.31.06.12.06.65-.18 1.33Z" />
+    </svg>
+  </a>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ── Footer accordions (mobile) ──
+    const footerMediaQuery = window.matchMedia('(max-width: 760px)');
+    const footerHeadings = document.querySelectorAll('.footer-heading');
+
+    function syncFooterAccordions() {
+      footerHeadings.forEach(button => {
+        const panel = document.getElementById(button.getAttribute('aria-controls'));
+        button.setAttribute('aria-expanded', String(!footerMediaQuery.matches));
+        panel.classList.toggle('open', !footerMediaQuery.matches);
+      });
+    }
+
+    footerHeadings.forEach(button => {
+      button.addEventListener('click', () => {
+        if (!footerMediaQuery.matches) return;
+        const isOpen = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!isOpen));
+        document.getElementById(button.getAttribute('aria-controls')).classList.toggle('open', !isOpen);
+      });
+    });
+    footerMediaQuery.addEventListener('change', syncFooterAccordions);
+    syncFooterAccordions();
+
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close mobile menu when any regular link is clicked
+    document.querySelectorAll('.nav-links > a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // ── Services dropdown (desktop hover + mobile click) ──
+    const dropdownToggle = document.getElementById('dropdownToggle');
+    const servicesDropdown = document.getElementById('servicesDropdown');
+
+    dropdownToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = servicesDropdown.classList.toggle('open');
+      dropdownToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close dropdown when a menu link is clicked
+    document.querySelectorAll('#dropdownMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        servicesDropdown.classList.remove('open');
+        dropdownToggle.setAttribute('aria-expanded', 'false');
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!servicesDropdown.contains(e.target)) {
+        servicesDropdown.classList.remove('open');
+        dropdownToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  </script>
+
+</body>
+
+</html>
