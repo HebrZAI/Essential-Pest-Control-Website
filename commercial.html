@@ -10,6 +10,7 @@
     gtag('js', new Date());
     gtag('config', 'AW-16967723902');
   </script>
+  <script defer src="google-ads-conversions.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Commercial Pest Control Gauteng | Essential Pest Control</title>
@@ -681,9 +682,13 @@
 
     const quoteForm = document.getElementById('quoteForm');
     const formMessage = document.getElementById('formMessage');
+    let quoteSubmissionInProgress = false;
 
     quoteForm.addEventListener('submit', async function (e) {
       e.preventDefault();
+      if (quoteSubmissionInProgress) return;
+
+      quoteSubmissionInProgress = true;
       formMessage.textContent = 'Sending...';
       formMessage.classList.remove('error');
 
@@ -697,6 +702,15 @@
         });
 
         if (response.ok) {
+          if (typeof window.gtag === 'function') {
+            try {
+              window.gtag('event', 'conversion', {
+                'send_to': 'AW-16967723902/SPEICIfdrfQcEP7W65o_'
+              });
+            } catch (error) {
+              // Tracking must never change the confirmed form-success experience.
+            }
+          }
           formMessage.textContent = 'Thanks! Your quote request has been sent.';
           quoteForm.reset();
         } else {
@@ -708,6 +722,8 @@
       } catch (error) {
         formMessage.textContent = 'Network error. Please try again later.';
         formMessage.classList.add('error');
+      } finally {
+        quoteSubmissionInProgress = false;
       }
     });
   </script>
