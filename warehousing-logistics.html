@@ -2,29 +2,23 @@
 <html lang="en-ZA">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16967723902"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-16967723902');
-  </script>
+  <link rel="stylesheet" href="privacy.css">
+  <script defer src="site-consent.js"></script>
   <script defer src="google-ads-conversions.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Warehouse Pest Control Gauteng | Essential Pest Control</title>
   <meta name="description" content="Commercial pest control for Gauteng warehouses and logistics facilities, including rodent monitoring, stored-product pests and planned prevention.">
-  <link rel="canonical" href="https://essentialpestcontrol.co.za/warehousing-logistics.html">
+  <link rel="canonical" href="https://essentialpestcontrol.co.za/warehousing-logistics">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta property="og:locale" content="en_ZA">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Essential Pest Control">
   <meta property="og:title" content="Warehouse Pest Control Gauteng | Essential Pest Control">
   <meta property="og:description" content="Commercial pest control for Gauteng warehouses and logistics facilities, including rodent monitoring, stored-product pests and planned prevention.">
-  <meta property="og:url" content="https://essentialpestcontrol.co.za/warehousing-logistics.html">
+  <meta property="og:url" content="https://essentialpestcontrol.co.za/warehousing-logistics">
   <meta property="og:image" content="https://essentialpestcontrol.co.za/images/Warehouses.webp">
-  <meta property="og:image:alt" content="Warehouse Pest Control Gauteng | Essential Pest Control">
+  <meta property="og:image:alt" content="Warehouse aisle with pallet racking and stacked goods">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Warehouse Pest Control Gauteng | Essential Pest Control">
   <meta name="twitter:description" content="Commercial pest control for Gauteng warehouses and logistics facilities, including rodent monitoring, stored-product pests and planned prevention.">
@@ -33,6 +27,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/favicon.png">
 
+  <link rel="preload" href="quote-form.js" as="script" fetchpriority="high">
   <link rel="preload" href="fonts/Montserrat-Medium.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/Montserrat-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
@@ -46,11 +41,11 @@
   "@graph": [
     {
       "@type": "Service",
-      "@id": "https://essentialpestcontrol.co.za/warehousing-logistics.html#service",
+      "@id": "https://essentialpestcontrol.co.za/warehousing-logistics#service",
       "name": "Warehouse and logistics pest control",
       "serviceType": "Warehouse and logistics pest control",
       "description": "Commercial pest control for Gauteng warehouses and logistics facilities, including rodent monitoring, stored-product pests and planned prevention.",
-      "url": "https://essentialpestcontrol.co.za/warehousing-logistics.html",
+      "url": "https://essentialpestcontrol.co.za/warehousing-logistics",
       "provider": {
         "@id": "https://essentialpestcontrol.co.za/#business"
       },
@@ -61,24 +56,24 @@
     },
     {
       "@type": "WebPage",
-      "@id": "https://essentialpestcontrol.co.za/warehousing-logistics.html#webpage",
-      "url": "https://essentialpestcontrol.co.za/warehousing-logistics.html",
+      "@id": "https://essentialpestcontrol.co.za/warehousing-logistics#webpage",
+      "url": "https://essentialpestcontrol.co.za/warehousing-logistics",
       "name": "Warehouse Pest Control Gauteng | Essential Pest Control",
       "description": "Commercial pest control for Gauteng warehouses and logistics facilities, including rodent monitoring, stored-product pests and planned prevention.",
       "isPartOf": {
         "@id": "https://essentialpestcontrol.co.za/#website"
       },
       "about": {
-        "@id": "https://essentialpestcontrol.co.za/warehousing-logistics.html#service"
+        "@id": "https://essentialpestcontrol.co.za/warehousing-logistics#service"
       },
       "breadcrumb": {
-        "@id": "https://essentialpestcontrol.co.za/warehousing-logistics.html#breadcrumb"
+        "@id": "https://essentialpestcontrol.co.za/warehousing-logistics#breadcrumb"
       },
       "inLanguage": "en-ZA"
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://essentialpestcontrol.co.za/warehousing-logistics.html#breadcrumb",
+      "@id": "https://essentialpestcontrol.co.za/warehousing-logistics#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -90,13 +85,15 @@
           "@type": "ListItem",
           "position": 2,
           "name": "Warehouse Pest Control Gauteng",
-          "item": "https://essentialpestcontrol.co.za/warehousing-logistics.html"
+          "item": "https://essentialpestcontrol.co.za/warehousing-logistics"
         }
       ]
     }
   ]
 }
   </script>
+  <link rel="stylesheet" href="quote-form.css">
+  <script defer src="quote-form.js"></script>
 </head>
 
 <body class="commercial-page">
@@ -104,26 +101,26 @@
   <!-- ============ NAV (same as homepage, links point back to index.html) ============ -->
   <header class="site-header" id="top">
     <div class="nav-inner">
-      <a href="index.html" class="logo">
+      <a href="/" class="logo">
         <img src="images/logo.webp" alt="Essential Pest Control logo" width="300" height="96">
       </a>
 
       <nav class="nav-links" id="navLinks">
-        <a href="index.html#residential">Residential</a>
+        <a href="/#residential">Residential</a>
         <div class="nav-dropdown commercial-dropdown">
-          <a href="commercial.html" class="commercial-link">Commercial</a>
+          <a href="commercial" class="commercial-link">Commercial</a>
           <button type="button" class="commercial-menu-toggle" aria-label="Show commercial categories" aria-expanded="false"
             onclick="const isOpen = this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', isOpen)">▼</button>
           <ul class="dropdown-menu">
-            <li><a href="restaurants.html">Restaurants &amp; Fast Food</a></li>
-            <li><a href="construction.html">Construction &amp; Development</a></li>
-            <li><a href="body-corporates.html">Body Corporates &amp; Property Managers</a></li>
-            <li><a href="schools-creches.html">Schools &amp; Creches</a></li>
-            <li><a href="warehousing-logistics.html" aria-current="page">Warehousing &amp; Logistics</a></li>
-            <li><a href="offices-retail.html">Offices &amp; Retail</a></li>
-            <li><a href="healthcare-aged-care.html">Healthcare &amp; Aged Care</a></li>
-            <li><a href="hospitality-guesthouses.html">Hospitality &amp; Guesthouses</a></li>
-            <li><a href="horse-stables-equestrian.html">Horse Stables &amp; Equestrian Facilities</a></li>
+            <li><a href="restaurants">Restaurants &amp; Fast Food</a></li>
+            <li><a href="construction">Construction &amp; Development</a></li>
+            <li><a href="body-corporates">Body Corporates &amp; Property Managers</a></li>
+            <li><a href="schools-creches">Schools &amp; Creches</a></li>
+            <li><a href="warehousing-logistics" aria-current="page">Warehousing &amp; Logistics</a></li>
+            <li><a href="offices-retail">Offices &amp; Retail</a></li>
+            <li><a href="healthcare-aged-care">Healthcare &amp; Aged Care</a></li>
+            <li><a href="hospitality-guesthouses">Hospitality &amp; Guesthouses</a></li>
+            <li><a href="horse-stables-equestrian">Horse Stables &amp; Equestrian Facilities</a></li>
           </ul>
         </div>
 
@@ -132,18 +129,18 @@
           <button class="dropdown-toggle" id="dropdownToggle" aria-haspopup="true"
             aria-expanded="false">Services</button>
           <ul class="dropdown-menu" id="dropdownMenu" role="menu">
-            <li><a href="ants.html" role="menuitem">Ants</a></li>
-            <li><a href="cockroaches.html" role="menuitem">Cockroaches</a></li>
-            <li><a href="rodents.html" role="menuitem">Rodents</a></li>
-            <li><a href="bedbugs.html" role="menuitem">Bedbugs</a></li>
-            <li><a href="termite-proofing.html" role="menuitem">Termite Proofing</a></li>
-            <li><a href="weed-control.html" role="menuitem">Weed Control</a></li>
+            <li><a href="ants" role="menuitem">Ants</a></li>
+            <li><a href="cockroaches" role="menuitem">Cockroaches</a></li>
+            <li><a href="rodents" role="menuitem">Rodents</a></li>
+            <li><a href="bedbugs" role="menuitem">Bedbugs</a></li>
+            <li><a href="termite-proofing" role="menuitem">Termite Proofing</a></li>
+            <li><a href="weed-control" role="menuitem">Weed Control</a></li>
           </ul>
         </div>
-        <a href="index.html#areas">Areas</a>
+        <a href="/#areas">Areas</a>
 
-        <a href="blog.html">Blog</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="blog">Blog</a>
+        <a href="#contact">Contact</a>
       </nav>
 
       <div class="nav-actions">
@@ -162,27 +159,91 @@
   </header>
 
   <!-- ============ PAGE HERO ============ -->
-  <section class="page-hero">
-    <div class="hero-text">
-      <p class="breadcrumb"><a href="index.html">Home</a> / <a href="commercial.html">Commercial</a> / Warehousing &amp; Logistics</p>
-      <p class="eyebrow">Warehouses, Distribution Centres &amp; Logistics Facilities</p>
-      <h1>Your Stock Should Move Through the Warehouse. Pests Should Not.</h1>
-      <p class="page-hero-sub">Open loading bays, constant deliveries and large storage areas give pests opportunities that are easy to miss. We help Gauteng warehouse and logistics operators identify those risks, protect stock and maintain a clear service record without slowing down receiving or dispatch.</p>
-      <div class="hero-actions">
-        <a href="commercial.html#contact" class="btn btn-primary">Contact Us</a>
-        <a class="btn btn-whatsapp btn-whatsapp-lg" href="https://wa.me/27686022225" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.82L2 22l5.4-1.42a9.87 9.87 0 0 0 4.64 1.18h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.15-1.53-1.15-2.92 0-1.39.72-2.07.98-2.35.24-.28.53-.35.71-.35.18 0 .35 0 .5.01.16.01.38-.06.6.46.24.56.8 1.95.87 2.09.07.14.11.3.02.49-.09.19-.14.3-.28.46-.14.16-.28.36-.4.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.53.72 1.79.85.26.14.44.2.5.31.06.12.06.65-.18 1.33Z"/></svg>
-          <span>WhatsApp Us</span>
-        </a>
+  <section class="lead-hero" aria-labelledby="page-title">
+    <div class="lead-content">
+      <div class="lead-copy">
+        <h1 id="page-title">Pest Control for Warehouses in Gauteng</h1>
+        <p class="lead-description">Keep pests away from stock with monitoring and treatment planned around receiving bays, storage areas and dispatch.</p>
       </div>
+      <figure class="lead-media"><img src="images/Warehouses.webp" alt="Warehouse aisle with pallet racking and stacked goods" width="1536" height="1024" loading="eager"></figure>
+      <p class="lead-breadcrumb"><a href="/">Home</a> / <a href="commercial">Commercial</a> / Warehousing &amp; Logistics</p>
     </div>
-    <div class="hero-image-container">
-      <div class="hero-image-outer">
-        <div class="hero-image-bg">
-          <img src="images/Warehouses.webp" alt="Pest control inspection inside a modern Gauteng distribution warehouse" class="hero-image" width="1536" height="1024">
+    <aside class="quote-panel" id="contact" aria-labelledby="quote-heading">
+      <div class="quote-heading-row">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-3M8 2h8v4H8zM7 11h10M7 15h10M7 19h6"/></svg>
+        <h2 id="quote-heading">Get your free quote</h2>
+      </div>
+      <p class="quote-intro">Tell us what you need. We’ll take it from here.</p>
+      <form class="quote-form" id="quoteForm" action="https://formspree.io/f/xjgnewdj" method="POST">
+        <input type="hidden" name="page_url" value="https://essentialpestcontrol.co.za/warehousing-logistics">
+        <p class="quote-progress" hidden><span id="quoteStepStatus" aria-live="polite">Step 1 of 2</span><span id="quoteStepName">Your site</span></p>
+        <div class="quote-progress-track" aria-hidden="true" hidden><span></span></div>
+        <div class="quote-stages">
+          <fieldset class="quote-step" data-quote-step="1" data-step-name="Your site">
+            <legend class="quote-legend">Your site</legend>
+            <div class="quote-fields">
+              <div class="quote-field">
+                <label for="company">Company / site name</label>
+                <input type="text" id="company" name="company" autocomplete="organization" placeholder="Your business or site name" required>
+              </div>
+              <div class="quote-field">
+                <label for="industry">Industry</label>
+                <select id="industry" name="industry" required>
+                  <option value="" disabled>Select one</option>
+                  <option value="restaurant-fast-food">Restaurant / Fast Food</option>
+                  <option value="construction">Construction / Development</option>
+                  <option value="body-corporate">Body Corporate / Property Management</option>
+                  <option value="school-creche">School / Creche</option>
+                  <option value="warehousing" selected>Warehousing / Logistics</option>
+                  <option value="office-retail">Office / Retail</option>
+                  <option value="healthcare">Healthcare / Aged Care</option>
+                  <option value="hospitality">Hospitality / Guesthouse</option>
+                  <option value="horse-stables-equestrian">Horse Stables / Equestrian</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+            <button class="quote-button quote-next" type="button" hidden>Continue to contact details <span aria-hidden="true">→</span></button>
+          </fieldset>
+          <fieldset class="quote-step" data-quote-step="2" data-step-name="Contact details">
+            <legend class="quote-legend">Contact details</legend>
+            <div class="quote-fields quote-contact-fields">
+              <div class="quote-field">
+                <label for="name">Contact name</label>
+                <input type="text" id="name" name="name" autocomplete="name" placeholder="Your name" required>
+              </div>
+              <div class="quote-field">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="082 000 0000" required>
+              </div>
+              <div class="quote-field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" required>
+              </div>
+              <div class="quote-field">
+                <label for="message">Tell us about the site &amp; problem</label>
+                <textarea id="message" name="message" rows="2" placeholder="Where is the activity, and what have you noticed?" required></textarea>
+              </div>
+            </div>
+            <div class="form-message" id="formMessage" role="status" aria-live="polite" hidden></div>
+            <div class="quote-final-actions">
+              <button class="quote-back" type="button" hidden>Back</button>
+              <button class="quote-button" type="submit">Request my free quote</button>
+            </div>
+          </fieldset>
         </div>
+        <p class="quote-privacy">We use your details to respond to your enquiry. Read our <a href="privacy-policy">privacy policy</a>.</p>
+      </form>
+      <div class="quote-success" id="quoteSuccess" tabindex="-1" role="status" hidden>
+        <h3>Thank you—your request is in.</h3>
+        <p>Your quote request has been received. We’ll contact you within one business day.</p>
+        <p>Need help sooner?</p>
       </div>
-    </div>
+      <div class="quote-contact-actions" aria-label="Contact us directly">
+        <a class="quote-contact quote-contact-call" href="tel:+27686022225">Call 068 602 2225</a>
+        <a class="quote-contact quote-contact-whatsapp" href="https://wa.me/27686022225" target="_blank" rel="noopener">WhatsApp us</a>
+      </div>
+    </aside>
   </section>
 
   <!-- ============ COMMERCIAL IMPACT ============ -->
@@ -312,11 +373,11 @@
       <div class="perimeter-rule"></div>
     </div>
     <div class="related-industries">
-      <a href="construction.html" class="industry-link-card">Construction &amp; Development</a>
-      <a href="offices-retail.html" class="industry-link-card">Offices &amp; Retail</a>
-      <a href="restaurants.html" class="industry-link-card">Restaurants &amp; Fast Food</a>
-      <a href="body-corporates.html" class="industry-link-card">Body Corporates &amp; Property Managers</a>
-      <a href="healthcare-aged-care.html" class="industry-link-card">Healthcare &amp; Aged Care</a>
+      <a href="construction" class="industry-link-card">Construction &amp; Development</a>
+      <a href="offices-retail" class="industry-link-card">Offices &amp; Retail</a>
+      <a href="restaurants" class="industry-link-card">Restaurants &amp; Fast Food</a>
+      <a href="body-corporates" class="industry-link-card">Body Corporates &amp; Property Managers</a>
+      <a href="healthcare-aged-care" class="industry-link-card">Healthcare &amp; Aged Care</a>
     </div>
   </section>
 
@@ -325,7 +386,7 @@
     <h2>Protect the Stock, the Site and the Next Delivery.</h2>
     <p>Tell us what you store, where the facility is and what activity has been found. We will help you define the right inspection and servicing plan.</p>
     <div class="hero-actions cta-band-actions">
-      <a href="commercial.html#contact" class="btn btn-primary">Contact Us</a>
+      <a href="#contact" class="btn btn-primary">Contact Us</a>
       <a class="btn btn-whatsapp btn-whatsapp-lg" href="https://wa.me/27686022225" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.82L2 22l5.4-1.42a9.87 9.87 0 0 0 4.64 1.18h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.15-1.53-1.15-2.92 0-1.39.72-2.07.98-2.35.24-.28.53-.35.71-.35.18 0 .35 0 .5.01.16.01.38-.06.6.46.24.56.8 1.95.87 2.09.07.14.11.3.02.49-.09.19-.14.3-.28.46-.14.16-.28.36-.4.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.53.72 1.79.85.26.14.44.2.5.31.06.12.06.65-.18 1.33Z"/></svg>
         <span>WhatsApp Us</span>
@@ -337,7 +398,7 @@
     <div class="footer-inner">
       <div class="footer-main">
         <div class="footer-brand">
-          <a href="index.html#top" class="logo-footer" aria-label="Essential Pest Control - back to top">
+          <a href="/#top" class="logo-footer" aria-label="Essential Pest Control - back to top">
             <img src="images/logo.webp" alt="Essential Pest Control" width="300" height="96" loading="lazy">
           </a>
           <p>Residential and commercial pest management across Pretoria, Centurion and greater Gauteng.</p>
@@ -363,12 +424,12 @@
               Services <span aria-hidden="true"></span>
             </button>
             <ul id="footer-services" class="footer-links">
-              <li><a href="ants.html">Ant Control</a></li>
-              <li><a href="cockroaches.html">Cockroach Control</a></li>
-              <li><a href="rodents.html">Rodent Control</a></li>
-              <li><a href="bedbugs.html">Bedbug Treatments</a></li>
-              <li><a href="termite-proofing.html">Termite Proofing</a></li>
-              <li><a href="weed-control.html">Weed Control</a></li>
+              <li><a href="ants">Ant Control</a></li>
+              <li><a href="cockroaches">Cockroach Control</a></li>
+              <li><a href="rodents">Rodent Control</a></li>
+              <li><a href="bedbugs">Bedbug Treatments</a></li>
+              <li><a href="termite-proofing">Termite Proofing</a></li>
+              <li><a href="weed-control">Weed Control</a></li>
             </ul>
           </section>
 
@@ -377,12 +438,12 @@
               Service Areas <span aria-hidden="true"></span>
             </button>
             <ul id="footer-areas" class="footer-links footer-area-links">
-              <li><a href="areas/pretoria.html">Pretoria</a></li>
-              <li><a href="areas/pretoria-east.html">Pretoria East</a></li>
-              <li><a href="areas/centurion.html">Centurion</a></li>
-              <li><a href="areas/sandton.html">Sandton</a></li>
-              <li><a href="areas/randburg.html">Randburg</a></li>
-              <li><a href="areas/kempton-park.html">Kempton Park</a></li>
+              <li><a href="areas/pretoria">Pretoria</a></li>
+              <li><a href="areas/pretoria-east">Pretoria East</a></li>
+              <li><a href="areas/centurion">Centurion</a></li>
+              <li><a href="areas/sandton">Sandton</a></li>
+              <li><a href="areas/randburg">Randburg</a></li>
+              <li><a href="areas/kempton-park">Kempton Park</a></li>
             </ul>
           </section>
 
@@ -391,17 +452,18 @@
               Explore <span aria-hidden="true"></span>
             </button>
             <ul id="footer-explore" class="footer-links">
-              <li><a href="index.html#residential">Residential</a></li>
-              <li><a href="index.html#commercial">Commercial</a></li>
-              <li><a href="index.html#services">All Services</a></li>
-              <li><a href="blog.html">Pest Advice</a></li>
-              <li><a href="index.html#contact">Contact</a></li>
+              <li><a href="/#residential">Residential</a></li>
+              <li><a href="/#commercial">Commercial</a></li>
+              <li><a href="/#services">All Services</a></li>
+              <li><a href="blog">Pest Advice</a></li>
+              <li><a href="#contact">Contact</a></li>
             </ul>
           </section>
         </div>
       </div>
 
       <div class="footer-bottom">
+        <div class="footer-privacy"><a href="privacy-policy">Privacy policy</a><button type="button" data-cookie-settings>Cookie settings</button></div>
         <p>&copy; <span id="year"></span> Essential Pest Control. Serving Pretoria, Centurion and greater Gauteng.</p>
         <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
       </div>
@@ -487,6 +549,10 @@
     });
   </script>
 
+  <nav class="quote-bar" aria-label="Quick enquiry" hidden>
+    <a class="quote-button" href="#contact">Get a free quote</a>
+    <a class="quote-bar-chat" href="https://wa.me/27686022225" target="_blank" rel="noopener">WhatsApp</a>
+  </nav>
 </body>
 
 </html>

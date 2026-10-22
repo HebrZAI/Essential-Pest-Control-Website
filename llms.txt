@@ -4,26 +4,26 @@ Essential Pest Control provides residential and commercial pest management in Ga
 
 ## Primary pages
 - Home: https://essentialpestcontrol.co.za/
-- Commercial pest control: https://essentialpestcontrol.co.za/commercial.html
-- Pest control advice: https://essentialpestcontrol.co.za/blog.html
+- Commercial pest control: https://essentialpestcontrol.co.za/commercial
+- Pest control advice: https://essentialpestcontrol.co.za/blog
 
 ## Residential and general services
-- Ant control: https://essentialpestcontrol.co.za/ants.html
-- Cockroach control: https://essentialpestcontrol.co.za/cockroaches.html
-- Rodent control: https://essentialpestcontrol.co.za/rodents.html
-- Bed bug treatment: https://essentialpestcontrol.co.za/bedbugs.html
-- Termite treatment and proofing: https://essentialpestcontrol.co.za/termite-proofing.html
-- Weed control: https://essentialpestcontrol.co.za/weed-control.html
+- Ant control: https://essentialpestcontrol.co.za/ants
+- Cockroach control: https://essentialpestcontrol.co.za/cockroaches
+- Rodent control: https://essentialpestcontrol.co.za/rodents
+- Bed bug treatment: https://essentialpestcontrol.co.za/bedbugs
+- Termite treatment and proofing: https://essentialpestcontrol.co.za/termite-proofing
+- Weed control: https://essentialpestcontrol.co.za/weed-control
 
 ## Primary residential service region
-- Pretoria: https://essentialpestcontrol.co.za/areas/pretoria.html
-- Pretoria East: https://essentialpestcontrol.co.za/areas/pretoria-east.html
-- Centurion: https://essentialpestcontrol.co.za/areas/centurion.html
+- Pretoria: https://essentialpestcontrol.co.za/areas/pretoria
+- Pretoria East: https://essentialpestcontrol.co.za/areas/pretoria-east
+- Centurion: https://essentialpestcontrol.co.za/areas/centurion
 
 ## Additional Gauteng service areas
-- Sandton: https://essentialpestcontrol.co.za/areas/sandton.html
-- Randburg: https://essentialpestcontrol.co.za/areas/randburg.html
-- Kempton Park: https://essentialpestcontrol.co.za/areas/kempton-park.html
+- Sandton: https://essentialpestcontrol.co.za/areas/sandton
+- Randburg: https://essentialpestcontrol.co.za/areas/randburg
+- Kempton Park: https://essentialpestcontrol.co.za/areas/kempton-park
 
 ## Contact
 - Phone and WhatsApp: +27 68 602 2225

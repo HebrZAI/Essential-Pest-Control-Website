@@ -2,14 +2,8 @@
 <html lang="en-ZA">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16967723902"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-16967723902');
-  </script>
+  <link rel="stylesheet" href="privacy.css">
+  <script defer src="site-consent.js"></script>
   <script defer src="google-ads-conversions.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +18,7 @@
   <meta property="og:description" content="Licensed pest control in Pretoria, Pretoria East and Centurion, with residential and commercial service available across greater Gauteng.">
   <meta property="og:url" content="https://essentialpestcontrol.co.za/">
   <meta property="og:image" content="https://essentialpestcontrol.co.za/images/Hero.webp">
-  <meta property="og:image:alt" content="Pest Control Pretoria &amp; Centurion | Essential Pest Control">
+  <meta property="og:image:alt" content="Essential Pest Control technician treating a kitchen, alongside a cockroach, rat and termite-damaged wood">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Pest Control Pretoria &amp; Centurion | Essential Pest Control">
   <meta name="twitter:description" content="Licensed pest control in Pretoria, Pretoria East and Centurion, with residential and commercial service available across greater Gauteng.">
@@ -33,13 +27,12 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/favicon.png">
 
+  <link rel="preload" href="quote-form.js" as="script" fetchpriority="high">
   <link rel="preload" href="fonts/Montserrat-Medium.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/Montserrat-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/Roboto-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
-  <link rel="preload" as="image" href="images/Hero.webp" fetchpriority="high">
-  <link rel="preload" as="image" href="images/Hero-mobile.webp" media="(max-width: 767px)" fetchpriority="high">
   <script id="seo-structured-data" type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -187,6 +180,8 @@
   ]
 }
   </script>
+  <link rel="stylesheet" href="quote-form.css">
+  <script defer src="quote-form.js"></script>
 </head>
 
 <body>
@@ -201,19 +196,19 @@
       <nav class="nav-links" id="navLinks">
         <a href="#residential">Residential</a>
         <div class="nav-dropdown commercial-dropdown">
-          <a href="commercial.html" class="commercial-link">Commercial</a>
+          <a href="commercial" class="commercial-link">Commercial</a>
           <button type="button" class="commercial-menu-toggle" aria-label="Show commercial categories" aria-expanded="false"
             onclick="const isOpen = this.parentElement.classList.toggle('open'); this.setAttribute('aria-expanded', isOpen)">▼</button>
           <ul class="dropdown-menu">
-            <li><a href="restaurants.html">Restaurants &amp; Fast Food</a></li>
-            <li><a href="construction.html">Construction &amp; Development</a></li>
-            <li><a href="body-corporates.html">Body Corporates &amp; Property Managers</a></li>
-            <li><a href="schools-creches.html">Schools &amp; Creches</a></li>
-            <li><a href="warehousing-logistics.html">Warehousing &amp; Logistics</a></li>
-            <li><a href="offices-retail.html">Offices &amp; Retail</a></li>
-            <li><a href="healthcare-aged-care.html">Healthcare &amp; Aged Care</a></li>
-            <li><a href="hospitality-guesthouses.html">Hospitality &amp; Guesthouses</a></li>
-            <li><a href="horse-stables-equestrian.html">Horse Stables &amp; Equestrian Facilities</a></li>
+            <li><a href="restaurants">Restaurants &amp; Fast Food</a></li>
+            <li><a href="construction">Construction &amp; Development</a></li>
+            <li><a href="body-corporates">Body Corporates &amp; Property Managers</a></li>
+            <li><a href="schools-creches">Schools &amp; Creches</a></li>
+            <li><a href="warehousing-logistics">Warehousing &amp; Logistics</a></li>
+            <li><a href="offices-retail">Offices &amp; Retail</a></li>
+            <li><a href="healthcare-aged-care">Healthcare &amp; Aged Care</a></li>
+            <li><a href="hospitality-guesthouses">Hospitality &amp; Guesthouses</a></li>
+            <li><a href="horse-stables-equestrian">Horse Stables &amp; Equestrian Facilities</a></li>
           </ul>
         </div>
 
@@ -222,17 +217,17 @@
           <button class="dropdown-toggle" id="dropdownToggle" aria-haspopup="true"
             aria-expanded="false">Services</button>
           <ul class="dropdown-menu" id="dropdownMenu" role="menu">
-            <li><a href="ants.html" role="menuitem">Ants</a></li>
-            <li><a href="cockroaches.html" role="menuitem">Cockroaches</a></li>
-            <li><a href="rodents.html" role="menuitem">Rodents</a></li>
-            <li><a href="bedbugs.html" role="menuitem">Bedbugs</a></li>
-            <li><a href="termite-proofing.html" role="menuitem">Termite Proofing</a></li>
-            <li><a href="weed-control.html" role="menuitem">Weed Control</a></li>
+            <li><a href="ants" role="menuitem">Ants</a></li>
+            <li><a href="cockroaches" role="menuitem">Cockroaches</a></li>
+            <li><a href="rodents" role="menuitem">Rodents</a></li>
+            <li><a href="bedbugs" role="menuitem">Bedbugs</a></li>
+            <li><a href="termite-proofing" role="menuitem">Termite Proofing</a></li>
+            <li><a href="weed-control" role="menuitem">Weed Control</a></li>
           </ul>
         </div>
         <a href="#areas">Areas</a>
 
-        <a href="blog.html">Blog</a>
+        <a href="blog">Blog</a>
         <a href="#contact">Contact</a>
       </nav>
 
@@ -252,32 +247,88 @@
   </header>
 
   <!-- ============ HERO ============ -->
-  <section class="hero">
-    <div class="hero-media">
-      <picture>
-        <source srcset="images/Hero.webp 1920w" media="(min-width: 768px)">
-        <source srcset="images/Hero-mobile.webp 800w" media="(max-width: 767px)">
-        <img src="images/Hero.webp" alt="Modern residential home protected by Essential Pest Control" width="1920"
-          height="960" loading="eager" fetchpriority="high" sizes="100vw">
-      </picture>
-      <div class="hero-overlay"></div>
-    </div>
-
-    <div class="hero-content">
-      <p class="eyebrow">Pretoria &middot; Pretoria East &middot; Centurion</p>
-      <h1>Professional Pest Control in Pretoria &amp; Centurion</h1>
-      <p class="hero-tagline">Safe. Effective. Reliable.</p>
-      <p class="hero-sub">Licensed treatment for homes and businesses across our core Pretoria and Centurion routes, with service also available in Sandton, Randburg, Kempton Park and wider Gauteng.</p>
-      <div class="hero-actions">
-        <a href="tel:+27686022225" class="btn btn-primary">Call Us Today</a>
-        <a class="btn btn-whatsapp btn-whatsapp-lg" href="https://wa.me/27686022225" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-            <path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.82L2 22l5.4-1.42a9.87 9.87 0 0 0 4.64 1.18h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.11.11-1.79-.11-.41-.13-.94-.3-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.15-1.53-1.15-2.92 0-1.39.72-2.07.98-2.35.24-.28.53-.35.71-.35.18 0 .35 0 .5.01.16.01.38-.06.6.46.24.56.8 1.95.87 2.09.07.14.11.3.02.49-.09.19-.14.3-.28.46-.14.16-.28.36-.4.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.28.36-.23.6-.14.24.09 1.53.72 1.79.85.26.14.44.2.5.31.06.12.06.65-.18 1.33Z" />
-          </svg>
-          WhatsApp Us
-        </a>
+  <section class="lead-hero" aria-labelledby="page-title">
+    <div class="lead-content">
+      <div class="lead-copy">
+        <h1 id="page-title">Pest Control in Pretoria &amp; Centurion</h1>
+        <p class="lead-description">From kitchen ants to termites in your foundations, get licensed treatment planned around your property.</p>
       </div>
+      <figure class="lead-media"><img src="images/Hero.webp" alt="Essential Pest Control technician treating a kitchen, alongside a cockroach, rat and termite-damaged wood" width="1920"
+            height="960" sizes="100vw" loading="eager"></figure>
     </div>
+    <aside class="quote-panel" id="contact" aria-labelledby="quote-heading">
+      <div class="quote-heading-row">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-3M8 2h8v4H8zM7 11h10M7 15h10M7 19h6"/></svg>
+        <h2 id="quote-heading">Get your free quote</h2>
+      </div>
+      <p class="quote-intro">Tell us what you need. We’ll take it from here.</p>
+      <form class="quote-form" id="quoteForm" action="https://formspree.io/f/xjgnewdj" method="POST">
+        <input type="hidden" name="page_url" value="https://essentialpestcontrol.co.za/">
+        <p class="quote-progress" hidden><span id="quoteStepStatus" aria-live="polite">Step 1 of 2</span><span id="quoteStepName">Your property</span></p>
+        <div class="quote-progress-track" aria-hidden="true" hidden><span></span></div>
+        <div class="quote-stages">
+          <fieldset class="quote-step" data-quote-step="1" data-step-name="Your property">
+            <legend class="quote-legend">Your property</legend>
+            <div class="quote-fields">
+              <div class="quote-field">
+                <label for="sector">Property type</label>
+                <select id="sector" name="sector" required>
+                  <option value="" disabled selected>Select one</option>
+                  <option value="residential">Residential</option>
+                  <option value="commercial">Commercial / Industrial</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="quote-field">
+                <label for="pest-type">Pests or services</label>
+                <select id="pest-type" name="pest_type" multiple required>
+                  <option value="ants">Ants</option>
+                  <option value="cockroaches">Cockroaches</option>
+                  <option value="rodents">Rodents</option>
+                  <option value="bedbugs">Bedbugs</option>
+                  <option value="termite-proofing">Termite Proofing</option>
+                  <option value="weed-control">Weed Control</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+            <button class="quote-button quote-next" type="button" hidden>Continue to contact details <span aria-hidden="true">→</span></button>
+          </fieldset>
+          <fieldset class="quote-step" data-quote-step="2" data-step-name="Contact details">
+            <legend class="quote-legend">Contact details</legend>
+            <div class="quote-fields quote-contact-fields">
+              <div class="quote-field">
+                <label for="name">Full name</label>
+                <input type="text" id="name" name="name" autocomplete="name" placeholder="Your name" required>
+              </div>
+              <div class="quote-field">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="082 000 0000" required>
+              </div>
+              <div class="quote-field">
+                <label for="message">Tell us about the problem</label>
+                <textarea id="message" name="message" rows="2" placeholder="Include your suburb and where you’ve noticed the pest." required></textarea>
+              </div>
+            </div>
+            <div class="form-message" id="formMessage" role="status" aria-live="polite" hidden></div>
+            <div class="quote-final-actions">
+              <button class="quote-back" type="button" hidden>Back</button>
+              <button class="quote-button" type="submit">Request my free quote</button>
+            </div>
+          </fieldset>
+        </div>
+        <p class="quote-privacy">We use your details to respond to your enquiry. Read our <a href="privacy-policy">privacy policy</a>.</p>
+      </form>
+      <div class="quote-success" id="quoteSuccess" tabindex="-1" role="status" hidden>
+        <h3>Thank you—your request is in.</h3>
+        <p>Your quote request has been received. We’ll contact you within one business day.</p>
+        <p>Need help sooner?</p>
+      </div>
+      <div class="quote-contact-actions" aria-label="Contact us directly">
+        <a class="quote-contact quote-contact-call" href="tel:+27686022225">Call 068 602 2225</a>
+        <a class="quote-contact quote-contact-whatsapp" href="https://wa.me/27686022225" target="_blank" rel="noopener">WhatsApp us</a>
+      </div>
+    </aside>
   </section>
 
   <!-- ============ CERTIFICATION CAROUSEL ============ -->
@@ -309,7 +360,7 @@
 
     <div class="sector-grid">
       <article class="sector-card" id="residential">
-        <img src="images/residential.jpg" alt="Residential pest control service" width="1200" height="798"
+        <img src="images/residential.jpg" alt="Pest control technician applying treatment near kitchen cabinets" width="1200" height="798"
           loading="lazy">
         <div class="sector-body">
           <span class="sector-tag">Residential</span>
@@ -328,7 +379,7 @@
       </article>
 
       <article class="sector-card" id="commercial">
-        <img src="images/commercialkitchen.webp" alt="Commercial pest control service" width="1000" height="545"
+        <img src="images/commercialkitchen.webp" alt="Kitchen staff preparing food beside commercial cooking equipment" width="1000" height="545"
           loading="lazy">
         <div class="sector-body">
           <span class="sector-tag sector-tag-alt">Commercial &amp; Industrial</span>
@@ -340,7 +391,7 @@
             <li>Food safety &amp; Health Standard Protocols</li>
             <li>Scheduled After-Hours &amp; Weekend Call-Outs</li>
           </ul>
-          <a href="commercial.html" class="btn btn-learn-more commercial-cta">See Commercial Services →</a>
+          <a href="commercial" class="btn btn-learn-more commercial-cta">See Commercial Services →</a>
         </div>
       </article>
     </div>
@@ -357,62 +408,62 @@
     <div class="services-grid">
       <div class="service-card">
         <span class="service-icon">
-          <img src="images/noants.webp" alt="Ants" width="300" height="162" loading="lazy">
+          <img src="images/noants.webp" alt="Ant control symbol with an ant inside a red prohibition sign" width="300" height="162" loading="lazy">
         </span>
         <h3>Ants</h3>
         <p>Colony elimination using targeted baiting, nest drilling and residual treatments at entry points and nesting
           sites.</p>
-        <a href="ants.html" class="btn btn-learn-more">Learn More →</a>
+        <a href="ants" class="btn btn-learn-more">Learn More →</a>
       </div>
 
       <div class="service-card">
         <span class="service-icon">
-          <img src="images/noroach.webp" alt="Cockroaches" width="300" height="162" loading="lazy">
+          <img src="images/noroach.webp" alt="Cockroach control symbol with a cockroach inside a red prohibition sign" width="300" height="162" loading="lazy">
         </span>
         <h3>Cockroaches</h3>
         <p>Professional cockroach control with perimeter treatments and colony-destroying baits and sprays for lasting
           results We use cutting edge industry products that stay active for 3 months after treatment.</p>
-        <a href="cockroaches.html" class="btn btn-learn-more">Learn More →</a>
+        <a href="cockroaches" class="btn btn-learn-more">Learn More →</a>
       </div>
 
       <div class="service-card">
         <span class="service-icon">
-          <img src="images/norats.webp" alt="Rodents" width="300" height="162" loading="lazy">
+          <img src="images/norats.webp" alt="Rodent control symbol with a rat inside a red prohibition sign" width="300" height="162" loading="lazy">
         </span>
         <h3>Rodents</h3>
         <p>We install sealed bait external stations, internal baitstations, and specialised ceiling treatments,
           combining 3 of the most advanced types of rodenticides currently available to pest control specialists. This
           ensures lasting success and getting rid of the infestation.</p>
-        <a href="rodents.html" class="btn btn-learn-more">Learn More →</a>
+        <a href="rodents" class="btn btn-learn-more">Learn More →</a>
       </div>
 
       <div class="service-card">
         <span class="service-icon">
-          <img src="images/nobedbug.webp" alt="Bedbugs" width="300" height="162" loading="lazy">
+          <img src="images/nobedbug.webp" alt="Bed bug control symbol with a bed bug inside a red prohibition sign" width="300" height="162" loading="lazy">
         </span>
         <h3>Bedbugs</h3>
         <p> Our bedbug treatments ensure that you can still sleep in the same bed that we treated that morning, no more
           itching, no smell.</p>
-        <a href="bedbugs.html" class="btn btn-learn-more">Learn More →</a>
+        <a href="bedbugs" class="btn btn-learn-more">Learn More →</a>
       </div>
 
       <div class="service-card">
         <span class="service-icon">
-          <img src="images/notermite.webp" alt="Termite Proofing" width="300" height="162" loading="lazy">
+          <img src="images/notermite.webp" alt="Termite control symbol with a termite inside a red prohibition sign" width="300" height="162" loading="lazy">
         </span>
         <h3>Termite Proofing</h3>
         <p>Pre, during, and post-construction foundation treatment &amp; timber treatments engineered to SANS standards
           with 5 &amp; 10 year warranties.</p>
-        <a href="termite-proofing.html" class="btn btn-learn-more">Learn More →</a>
+        <a href="termite-proofing" class="btn btn-learn-more">Learn More →</a>
       </div>
 
       <div class="service-card">
         <span class="service-icon">
-          <img src="images/noweed.webp" alt="Weed Control" width="300" height="162" loading="lazy">
+          <img src="images/noweed.webp" alt="Weed control symbol with weeds inside a red prohibition sign" width="300" height="162" loading="lazy">
         </span>
         <h3>Weed Control</h3>
         <p>Herbicide programmes for driveways, paving and grounds alongside general pest management.</p>
-        <a href="weed-control.html" class="btn btn-learn-more">Learn More →</a>
+        <a href="weed-control" class="btn btn-learn-more">Learn More →</a>
       </div>
     </div>
   </section>
@@ -428,12 +479,12 @@
     <div class="pricing-grid">
       <div class="price-card">
         <h3>1 - 2 Bedroom Apartments</h3>
-        <span class="price-tag">R880</span>
+        <span class="price-tag">R980</span>
         <p class="price-note">Once-off treatment for Ants &amp; Roaches</p>
       </div>
       <div class="price-card">
         <h3>3 Bedrooms &amp; More</h3>
-        <span class="price-tag">R980</span>
+        <span class="price-tag">R1080</span>
         <p class="price-note">Once-off treatment for Ants &amp; Roaches</p>
       </div>
     </div>
@@ -500,8 +551,8 @@
   </section>
 
   <!-- ============ CONTACT ============ -->
-  <section class="contact" id="contact">
-    <div class="contact-grid">
+  <section class="contact" id="contact-details">
+    <div class="contact-grid contact-details-only">
       <div class="contact-info">
         <p class="eyebrow eyebrow-dark">Get in touch</p>
         <h2>Request your free quote</h2>
@@ -547,51 +598,7 @@
         </a>
       </div>
 
-      <form class="contact-form" id="quoteForm" action="https://formspree.io/f/xjgnewdj" method="POST">
-        <div class="form-row">
-          <label for="name">Full name</label>
-          <input type="text" id="name" name="name" placeholder="Your name" required>
-        </div>
-        <div class="form-row form-row-split">
-          <div>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="you@example.com" required>
-          </div>
-          <div>
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" placeholder="082 000 0000" required>
-          </div>
-        </div>
-        <div class="form-row">
-          <label for="sector">Property type</label>
-          <select id="sector" name="sector" required>
-            <option value="" disabled selected>Select one</option>
-            <option value="residential">Residential</option>
-            <option value="commercial">Commercial / Industrial</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <label for="pest-type">Type of pest</label>
-          <select id="pest-type" name="pest_type" required>
-            <option value="" disabled selected>Select one</option>
-            <option value="ants">Ants</option>
-            <option value="cockroaches">Cockroaches</option>
-            <option value="rodents">Rodents</option>
-            <option value="bedbugs">Bedbugs</option>
-            <option value="termite-proofing">Termite Proofing</option>
-            <option value="weed-control">Weed Control</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <label for="message">Tell us about the problem</label>
-          <textarea id="message" name="message" rows="4"
-            placeholder="e.g. Ants in the kitchen, need a quarterly contract for our warehouse..." required></textarea>
-        </div>
-        <div class="form-message" id="formMessage" aria-live="polite"></div>
-        <button type="submit" class="btn btn-primary btn-block">Request Free Quote</button>
-      </form>
+      <a class="quote-button contact-return" href="#contact">Get your free quote</a>
     </div>
   </section>
 
@@ -608,9 +615,9 @@
       <div class="area-group area-group-primary">
         <h3>Core service region</h3>
         <ul class="area-list">
-          <li><a href="areas/pretoria.html">Pretoria</a></li>
-          <li><a href="areas/pretoria-east.html">Pretoria East</a></li>
-          <li><a href="areas/centurion.html">Centurion</a></li>
+          <li><a href="areas/pretoria">Pretoria</a></li>
+          <li><a href="areas/pretoria-east">Pretoria East</a></li>
+          <li><a href="areas/centurion">Centurion</a></li>
           <li>Hatfield</li>
           <li>Menlyn</li>
           <li>Garsfontein</li>
@@ -620,8 +627,8 @@
       <div class="area-group">
         <h3>Johannesburg routes</h3>
         <ul class="area-list">
-          <li><a href="areas/sandton.html">Sandton</a></li>
-          <li><a href="areas/randburg.html">Randburg</a></li>
+          <li><a href="areas/sandton">Sandton</a></li>
+          <li><a href="areas/randburg">Randburg</a></li>
           <li>Fourways</li>
           <li>Bryanston</li>
           <li>Midrand</li>
@@ -631,7 +638,7 @@
       <div class="area-group">
         <h3>East Rand routes</h3>
         <ul class="area-list">
-          <li><a href="areas/kempton-park.html">Kempton Park</a></li>
+          <li><a href="areas/kempton-park">Kempton Park</a></li>
           <li>Benoni</li>
           <li>Boksburg</li>
           <li>Germiston</li>
@@ -673,12 +680,12 @@
               Services <span aria-hidden="true"></span>
             </button>
             <ul id="footer-services" class="footer-links">
-              <li><a href="ants.html">Ant Control</a></li>
-              <li><a href="cockroaches.html">Cockroach Control</a></li>
-              <li><a href="rodents.html">Rodent Control</a></li>
-              <li><a href="bedbugs.html">Bedbug Treatments</a></li>
-              <li><a href="termite-proofing.html">Termite Proofing</a></li>
-              <li><a href="weed-control.html">Weed Control</a></li>
+              <li><a href="ants">Ant Control</a></li>
+              <li><a href="cockroaches">Cockroach Control</a></li>
+              <li><a href="rodents">Rodent Control</a></li>
+              <li><a href="bedbugs">Bedbug Treatments</a></li>
+              <li><a href="termite-proofing">Termite Proofing</a></li>
+              <li><a href="weed-control">Weed Control</a></li>
             </ul>
           </section>
 
@@ -687,12 +694,12 @@
               Service Areas <span aria-hidden="true"></span>
             </button>
             <ul id="footer-areas" class="footer-links footer-area-links">
-              <li><a href="areas/pretoria.html">Pretoria</a></li>
-              <li><a href="areas/pretoria-east.html">Pretoria East</a></li>
-              <li><a href="areas/centurion.html">Centurion</a></li>
-              <li><a href="areas/sandton.html">Sandton</a></li>
-              <li><a href="areas/randburg.html">Randburg</a></li>
-              <li><a href="areas/kempton-park.html">Kempton Park</a></li>
+              <li><a href="areas/pretoria">Pretoria</a></li>
+              <li><a href="areas/pretoria-east">Pretoria East</a></li>
+              <li><a href="areas/centurion">Centurion</a></li>
+              <li><a href="areas/sandton">Sandton</a></li>
+              <li><a href="areas/randburg">Randburg</a></li>
+              <li><a href="areas/kempton-park">Kempton Park</a></li>
             </ul>
           </section>
 
@@ -702,9 +709,9 @@
             </button>
             <ul id="footer-explore" class="footer-links">
               <li><a href="#residential">Residential</a></li>
-              <li><a href="commercial.html">Commercial</a></li>
+              <li><a href="commercial">Commercial</a></li>
               <li><a href="#services">All Services</a></li>
-              <li><a href="blog.html">Pest Advice</a></li>
+              <li><a href="blog">Pest Advice</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </section>
@@ -712,6 +719,7 @@
       </div>
 
       <div class="footer-bottom">
+        <div class="footer-privacy"><a href="privacy-policy">Privacy policy</a><button type="button" data-cookie-settings>Cookie settings</button></div>
         <p>&copy; <span id="year"></span> Essential Pest Control. Serving Pretoria, Centurion and greater Gauteng.</p>
         <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
       </div>
@@ -804,54 +812,12 @@
       }
     });
 
-    const quoteForm = document.getElementById('quoteForm');
-    const formMessage = document.getElementById('formMessage');
-    let quoteSubmissionInProgress = false;
-
-    quoteForm.addEventListener('submit', async function (e) {
-      e.preventDefault();
-      if (quoteSubmissionInProgress) return;
-
-      quoteSubmissionInProgress = true;
-      formMessage.textContent = 'Sending...';
-      formMessage.classList.remove('error');
-
-      try {
-        const response = await fetch(quoteForm.action, {
-          method: 'POST',
-          body: new FormData(quoteForm),
-          headers: {
-            'Accept': 'application/json'
-          }
-        });
-
-        if (response.ok) {
-          if (typeof window.gtag === 'function') {
-            try {
-              window.gtag('event', 'conversion', {
-                'send_to': 'AW-16967723902/SPEICIfdrfQcEP7W65o_'
-              });
-            } catch (error) {
-              // Tracking must never change the confirmed form-success experience.
-            }
-          }
-          formMessage.textContent = 'Thanks! Your quote request has been sent.';
-          quoteForm.reset();
-        } else {
-          const data = await response.json();
-          const message = data?.error || 'There was a problem sending the form. Please try again.';
-          formMessage.textContent = message;
-          formMessage.classList.add('error');
-        }
-      } catch (error) {
-        formMessage.textContent = 'Network error. Please try again later.';
-        formMessage.classList.add('error');
-      } finally {
-        quoteSubmissionInProgress = false;
-      }
-    });
   </script>
 
+  <nav class="quote-bar" aria-label="Quick enquiry" hidden>
+    <a class="quote-button" href="#contact">Get a free quote</a>
+    <a class="quote-bar-chat" href="https://wa.me/27686022225" target="_blank" rel="noopener">WhatsApp</a>
+  </nav>
 </body>
 
 </html>

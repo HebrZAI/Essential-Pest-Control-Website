@@ -1,0 +1,56 @@
+/* Privacy controls and information pages extend the site's existing palette and fonts. */
+[hidden] { display: none !important; }
+body { padding-bottom: var(--consent-height, 0px); }
+.footer-privacy { display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; }
+.footer-privacy button { border: 0; padding: 8px 0; background: transparent; color: var(--muted); font: inherit; font-size: .78rem; text-decoration: underline; cursor: pointer; }
+.footer-privacy a { padding: 8px 0; text-decoration: underline; }
+.quote-privacy { margin: 10px 0 0; color: var(--muted); font-size: .73rem; line-height: 1.45; }
+.quote-privacy a { color: var(--forest); text-decoration: underline; }
+.consent-panel { position: fixed; z-index: 10000; bottom: 0; left: 0; right: 0; padding: 22px max(24px, calc((100vw - 1180px) / 2)); background: var(--cream); color: var(--ink); border-top: 2px solid var(--forest); box-shadow: 0 -8px 32px rgba(20,23,26,.12); max-height: 80dvh; overflow-y: auto; } /* taste-skill-ignore: shadow on the fixed consent overlay. */
+.consent-copy h2 { margin: 0 0 8px; font: 700 1.2rem/1.3 var(--font-display); color: var(--forest); }
+.consent-copy p { max-width: 85ch; margin: 0; font-size: .93rem; }
+.consent-panel a { color: var(--forest); text-decoration: underline; }
+.consent-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.consent-actions button { min-height: 44px; padding: 10px 18px; border: 1px solid var(--forest); border-radius: 6px; background: var(--cream); color: var(--forest); font: 600 .88rem/1.4 var(--font-display); cursor: pointer; } /* taste-skill-ignore: equal outlined consent controls follow the existing brand. */
+.consent-actions button:hover { background: var(--forest-pale); }
+.consent-options { max-width: 75ch; margin-top: 20px; font-size: .92rem; }
+.consent-options p { margin: 0 0 16px; }
+.consent-options label { display: flex; align-items: flex-start; gap: 12px; cursor: pointer; }
+.consent-options input { flex: 0 0 auto; width: 22px; height: 22px; margin: 2px 0; accent-color: var(--forest); }
+.consent-open .whatsapp-float, .consent-open .quote-bar { visibility: hidden; pointer-events: none; }
+.consent-panel :focus-visible, .footer-privacy :focus-visible, .info-page a:focus-visible, .info-header a:focus-visible { outline: 3px solid var(--amber-deep); outline-offset: 4px; }
+.info-header .nav-inner { justify-content: space-between; gap: 20px; }
+.info-home { color: var(--forest); padding: 12px 0; font-weight: 600; }
+.info-page { width: min(100% - 48px, 1080px); margin: 64px auto 88px; }
+.info-page h1 { font: 700 clamp(2rem, 4.5vw, 3.5rem)/1.12 var(--font-display); letter-spacing: -.025em; color: var(--forest); margin: 0 0 24px; }
+.info-page h2 { font: 700 1.35rem/1.35 var(--font-display); color: var(--forest); margin: 36px 0 12px; }
+.info-page p, .info-page ul { margin: 0 0 18px; color: var(--ink); }
+.info-page a { color: var(--forest); text-decoration: underline; overflow-wrap: anywhere; }
+.policy-layout { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 48px; align-items: start; margin-top: 40px; }
+.policy-contact { padding: 24px; border-radius: var(--radius); background: var(--forest-pale); }
+.policy-contact h2 { margin-top: 0; font-size: 1.1rem; }
+.policy-contact address { font-style: normal; }
+.policy-contact p:last-child { margin-bottom: 0; }
+.policy-content { max-width: 72ch; }
+.policy-content section { padding: 0; }
+.policy-content section:first-child h2 { margin-top: 0; }
+.info-page .policy-updated { color: var(--muted); }
+.confirmation-layout { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(240px, .7fr); gap: clamp(32px, 6vw, 80px); align-items: start; padding: clamp(24px, 5vw, 64px); background: var(--forest); border-radius: 22px; color: white; }
+.confirmation-layout h1, .confirmation-layout h2, .confirmation-layout a { color: white; }
+.confirmation-layout h2 { margin-top: 0; font-size: 1.25rem; }
+.confirmation-layout p { max-width: 50ch; color: white; }
+.confirmation-contact .btn { max-width: 100%; min-height: 48px; white-space: normal; text-decoration: none; }
+.confirmation-contact { padding-top: 24px; }
+@media (max-width: 760px) {
+  .consent-panel { padding: 18px 20px max(18px, env(safe-area-inset-bottom)); }
+  .consent-copy p { font-size: .86rem; }
+  .consent-actions { gap: 8px; }
+  .consent-actions button { flex: 1 1 auto; padding: 10px 12px; font-size: .8rem; }
+  .info-header .logo img { max-width: 180px; }
+  .info-home { font-size: .85rem; }
+  .info-page { margin-top: 36px; margin-bottom: 56px; }
+  .policy-layout, .confirmation-layout { grid-template-columns: 1fr; gap: 32px; }
+  .policy-layout { margin-top: 28px; }
+  .policy-contact { padding: 20px; }
+}
+.privacy-settings { padding: 0; border: 0; background: transparent; color: var(--forest); font: inherit; text-decoration: underline; cursor: pointer; }
