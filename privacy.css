@@ -6,19 +6,23 @@ body { padding-bottom: var(--consent-height, 0px); }
 .footer-privacy a { padding: 8px 0; text-decoration: underline; }
 .quote-privacy { margin: 10px 0 0; color: var(--muted); font-size: .73rem; line-height: 1.45; }
 .quote-privacy a { color: var(--forest); text-decoration: underline; }
-.consent-panel { position: fixed; z-index: 10000; bottom: 0; left: 0; right: 0; padding: 22px max(24px, calc((100vw - 1180px) / 2)); background: var(--cream); color: var(--ink); border-top: 2px solid var(--forest); box-shadow: 0 -8px 32px rgba(20,23,26,.12); max-height: 80dvh; overflow-y: auto; } /* taste-skill-ignore: shadow on the fixed consent overlay. */
-.consent-copy h2 { margin: 0 0 8px; font: 700 1.2rem/1.3 var(--font-display); color: var(--forest); }
-.consent-copy p { max-width: 85ch; margin: 0; font-size: .93rem; }
+.consent-panel { position: fixed; z-index: 10000; bottom: 0; left: 0; right: 0; display: flex; align-items: center; gap: 16px; padding: 8px 24px max(8px, env(safe-area-inset-bottom)); background: var(--cream); color: var(--ink); border-top: 2px solid var(--forest); box-shadow: 0 -4px 16px rgba(20,23,26,.1); max-height: 80dvh; overflow-y: auto; } /* taste-skill-ignore: shadow on the fixed consent overlay. */
+.consent-summary { flex: 1; margin: 0; font-size: .86rem; line-height: 1.4; }
+.consent-summary a { white-space: nowrap; }
+.consent-options h2 { margin: 0 0 12px; font: 700 1.1rem/1.3 var(--font-display); color: var(--forest); }
 .consent-panel a { color: var(--forest); text-decoration: underline; }
-.consent-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
-.consent-actions button { min-height: 44px; padding: 10px 18px; border: 1px solid var(--forest); border-radius: 6px; background: var(--cream); color: var(--forest); font: 600 .88rem/1.4 var(--font-display); cursor: pointer; } /* taste-skill-ignore: equal outlined consent controls follow the existing brand. */
+.consent-actions { display: flex; flex: 0 0 auto; flex-wrap: wrap; gap: 8px; }
+.consent-actions button { min-height: 44px; padding: 10px 12px; border: 1px solid var(--forest); border-radius: 6px; background: var(--cream); color: var(--forest); font: 600 .8rem/1.4 var(--font-display); cursor: pointer; } /* taste-skill-ignore: equal outlined consent controls follow the existing brand. */
 .consent-actions button:hover { background: var(--forest-pale); }
-.consent-options { max-width: 75ch; margin-top: 20px; font-size: .92rem; }
+.consent-panel.is-expanded { display: block; padding-top: 16px; }
+.consent-options { max-width: 75ch; margin: 16px 0; font-size: .92rem; }
 .consent-options p { margin: 0 0 16px; }
 .consent-options label { display: flex; align-items: flex-start; gap: 12px; cursor: pointer; }
 .consent-options label + label { margin-top: 16px; }
 .consent-options input { flex: 0 0 auto; width: 22px; height: 22px; margin: 2px 0; accent-color: var(--forest); }
-.consent-open .whatsapp-float, .consent-open .quote-bar { visibility: hidden; pointer-events: none; }
+.consent-open .whatsapp-float { bottom: calc(22px + var(--consent-height, 0px)); }
+.consent-open .quote-bar { bottom: var(--consent-height, 0px); }
+.consent-expanded .whatsapp-float, .consent-expanded .quote-bar { visibility: hidden; pointer-events: none; }
 .consent-panel :focus-visible, .footer-privacy :focus-visible, .info-page a:focus-visible, .info-header a:focus-visible { outline: 3px solid var(--amber-deep); outline-offset: 4px; }
 .info-header .nav-inner { justify-content: space-between; gap: 20px; }
 .info-home { color: var(--forest); padding: 12px 0; font-weight: 600; }
@@ -43,10 +47,10 @@ body { padding-bottom: var(--consent-height, 0px); }
 .confirmation-contact .btn { max-width: 100%; min-height: 48px; white-space: normal; text-decoration: none; }
 .confirmation-contact { padding-top: 24px; }
 @media (max-width: 760px) {
-  .consent-panel { padding: 18px 20px max(18px, env(safe-area-inset-bottom)); }
-  .consent-copy p { font-size: .86rem; }
-  .consent-actions { gap: 8px; }
-  .consent-actions button { flex: 1 1 auto; padding: 10px 12px; font-size: .8rem; }
+  .consent-panel { display: block; padding: 8px 12px max(8px, env(safe-area-inset-bottom)); }
+  .consent-summary { font-size: .8rem; }
+  .consent-actions { margin-top: 8px; }
+  .consent-actions button { flex: 1 1 auto; padding: 10px 4px; font-size: .8rem; }
   .info-header .logo img { max-width: 180px; }
   .info-home { font-size: .85rem; }
   .info-page { margin-top: 36px; margin-bottom: 56px; }

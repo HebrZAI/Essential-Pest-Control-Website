@@ -214,7 +214,7 @@
   .quote-panel { padding: 22px; }
 }
 @media (max-width: 760px) {
-  body { padding-bottom: calc(82px + env(safe-area-inset-bottom, 0px)); }
+  body { padding-bottom: calc(82px + env(safe-area-inset-bottom, 0px) + var(--consent-height, 0px)); }
   .lead-hero {
     grid-template-columns: minmax(0, 1fr);
     gap: 16px;

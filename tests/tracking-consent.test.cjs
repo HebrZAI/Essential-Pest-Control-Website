@@ -57,6 +57,7 @@ async function fill(page, commercial = false) {
   await page.locator('#name').fill('Test enquiry');
   await page.locator('#phone').fill('082 000 0000');
   if (commercial) await page.locator('#email').fill('test@example.com');
+  await page.locator('#suburb').fill('Murrayfield');
   await page.locator('#message').fill('TEST ONLY: pest control in Pretoria.');
 }
 async function waitCount(array, count) {
@@ -250,6 +251,44 @@ test('expired consent asks again; saved acceptance loads one tag on a new page',
     await page.reload();
     assert.equal(await page.locator('.consent-panel').isVisible(), true);
     assert.equal(requests.length, 2);
+  } finally { await context.close(); }
+});
+
+test('compact consent keeps choices and contact controls accessible on phones and desktop', async () => {
+  const { context, page, requests, errors } = await setup();
+  try {
+    for (const width of [320, 390, 760, 768, 1440]) {
+      await page.setViewportSize({ width, height: 900 });
+      await visit(page);
+      const panel = page.locator('.consent-panel');
+      const options = page.locator('.consent-options');
+      assert.equal(await page.locator('.consent-summary').isVisible(), true);
+      assert.equal(await panel.getByRole('link', { name: 'Privacy policy' }).isVisible(), true);
+      assert.equal(await options.isVisible(), false);
+      const compactHeight = (await panel.boundingBox()).height;
+      assert.ok(compactHeight <= (width <= 760 ? 120 : 80), `compact banner at ${width}px: ${compactHeight}`);
+      const buttons = await page.locator('.consent-actions button:visible').all();
+      const boxes = await Promise.all(buttons.map(button => button.boundingBox()));
+      assert.equal(boxes.length, 3);
+      assert.ok(boxes.every(box => box.height >= 44 && box.y === boxes[0].y));
+      await page.evaluate(() => { document.documentElement.style.scrollBehavior = 'auto'; window.scrollTo(0, 1800); });
+      const contact = page.locator(width <= 760 ? '.quote-bar' : '.whatsapp-float');
+      await contact.waitFor({ state: 'visible' });
+      const bounds = await contact.boundingBox();
+      const bannerBounds = await panel.boundingBox();
+      assert.ok(bounds.y + bounds.height <= bannerBounds.y + 1, `contact controls above banner at ${width}px`);
+      assert.ok(await page.evaluate(() => parseFloat(getComputedStyle(document.body).paddingBottom) >=
+        document.querySelector('.consent-panel').getBoundingClientRect().height), 'space reserved below content');
+      assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+      await page.locator('[data-consent="preferences"]').focus();
+      await page.keyboard.press('Enter');
+      assert.equal(await options.isVisible(), true);
+      assert.equal(await page.locator('#consent-analytics').evaluate(el => el === document.activeElement), true);
+      assert.ok((await panel.boundingBox()).height > compactHeight);
+      assert.equal(await page.evaluate(key => localStorage.getItem(key), consentKey), null);
+    }
+    assert.deepEqual(requests, []);
+    assert.deepEqual(errors, []);
   } finally { await context.close(); }
 });
 

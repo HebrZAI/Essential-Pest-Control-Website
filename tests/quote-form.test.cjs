@@ -69,6 +69,7 @@ async function contact(page) {
   await page.locator('#name').fill('Test enquiry');
   await page.locator('#phone').fill('082 000 0000');
   if (await page.locator('#email').count()) await page.locator('#email').fill('test@example.com');
+  await page.locator('#suburb').fill('Murrayfield');
   await page.locator('#message').fill('TEST ONLY: pest activity in the kitchen in Pretoria.');
 }
 
@@ -108,6 +109,10 @@ test('all 30 pages expose a valid local quote form in the first mobile screen', 
             idsUnique: new Set(ids).size === ids.length,
             action: form.action,
             required: form.querySelectorAll('[required]').length,
+            suburbFields: form.querySelectorAll('[name="suburb"]').length,
+            suburbRequired: Boolean(form.querySelector('[data-quote-step="2"] input#suburb[name="suburb"][type="text"][required]')),
+            suburbLabels: form.querySelectorAll('label[for="suburb"]').length,
+            suburbBeforeMessage: Boolean(form.querySelector('#suburb').closest('.quote-field').nextElementSibling?.querySelector('#message')),
             emailFields: form.querySelectorAll('[name="email"], input[type="email"]').length,
             emailRequired: Boolean(form.querySelector('input[name="email"][type="email"][required]')),
             emailInPayload: new FormData(form).has('email'),
@@ -145,7 +150,11 @@ test('all 30 pages expose a valid local quote form in the first mobile screen', 
         assert.equal(result.idsUnique, true);
         assert.equal(result.action, 'https://formspree.io/f/xjgnewdj');
         const hasEmail = commercialEmailPages.has(file);
-        assert.equal(result.required, hasEmail ? 6 : 5);
+        assert.equal(result.required, hasEmail ? 7 : 6);
+        assert.equal(result.suburbFields, 1);
+        assert.equal(result.suburbRequired, true);
+        assert.equal(result.suburbLabels, 1);
+        assert.equal(result.suburbBeforeMessage, true);
         assert.equal(result.emailFields, hasEmail ? 1 : 0);
         assert.equal(result.emailRequired, hasEmail);
         assert.equal(result.emailInPayload, hasEmail);
@@ -429,6 +438,11 @@ for (const commercial of [false, true]) {
       assert.equal(requests.length, 0);
       await advance(page, commercial);
       await contact(page);
+      await page.locator('#suburb').fill('');
+      await page.locator('[type="submit"]').click();
+      assert.equal(requests.length, 0);
+      assert.equal(await page.locator('#suburb').evaluate(field => field === document.activeElement), true);
+      await page.locator('#suburb').fill('Murrayfield');
       if (commercial) {
         for (const value of ['', 'invalid']) {
           await page.locator('#email').fill(value);
@@ -446,6 +460,7 @@ for (const commercial of [false, true]) {
       await page.locator('.quote-back').click();
       assert.equal(await page.locator('#name').inputValue(), 'Test enquiry');
       await page.locator('.quote-next').click();
+      assert.equal(await page.locator('#suburb').inputValue(), 'Murrayfield');
       // A value invalidated in the hidden first step must reveal that step for correction.
       await page.locator(commercial ? '#company' : '#sector').evaluate(field => { field.value = ''; });
       await page.locator('[type="submit"]').click();
@@ -465,6 +480,7 @@ for (const commercial of [false, true]) {
       if (commercial) assert.match(requests[0], /name="email"\r\n\r\ntest@example.com/);
       else assert.doesNotMatch(requests[0], /name="email"/);
       assert.match(requests[0], /name="phone"\r\n\r\n082 000 0000/);
+      assert.match(requests[0], /name="suburb"\r\n\r\nMurrayfield/);
       assert.match(requests[0], commercial ? /warehousing/ : /cockroaches/);
       const conversions = await page.evaluate(() => window.testConversions);
       assert.equal(conversions.length, 1);
@@ -493,6 +509,7 @@ test('server and network failures retain the enquiry and never count a conversio
       await page.waitForFunction(() => document.querySelector('#formMessage').classList.contains('error'));
       assert.match(await page.locator('#formMessage').textContent(), text);
       assert.equal(await page.locator('#phone').inputValue(), '082 000 0000');
+      assert.equal(await page.locator('#suburb').inputValue(), 'Murrayfield');
       assert.equal(await page.locator('[type="submit"]').isDisabled(), false);
       assert.equal(await page.evaluate(() => window.testConversions.length), 0);
     }
@@ -594,6 +611,10 @@ for (const commercial of [false, true]) {
         await page.locator('#pest-type').selectOption(['ants', 'rodents']);
       }
       await contact(page);
+      await page.locator('#suburb').fill('');
+      await page.locator('[type="submit"]').click();
+      assert.equal(payload, undefined);
+      await page.locator('#suburb').fill('Murrayfield');
       if (commercial) {
         for (const value of ['', 'invalid']) {
           await page.locator('#email').fill(value);
@@ -614,6 +635,7 @@ for (const commercial of [false, true]) {
         assert.deepEqual(fields.getAll('pest_type'), ['ants', 'rodents']);
       }
       assert.equal(fields.get('phone'), '082 000 0000');
+      assert.equal(fields.get('suburb'), 'Murrayfield');
       assert.match(payload, /page_url=/);
     } finally { await context.close(); }
   });

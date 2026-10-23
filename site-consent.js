@@ -93,13 +93,14 @@
 
   const panel = document.createElement('section');
   panel.className = 'consent-panel';
-  panel.setAttribute('aria-labelledby', 'consent-title');
+  panel.setAttribute('aria-label', 'Cookie preferences');
   panel.hidden = true;
   const root = new URL('.', document.currentScript.src);
   const privacyUrl = new URL(location.protocol === 'file:' ? 'privacy-policy.html' : 'privacy-policy', root);
-  panel.innerHTML = '<div class="consent-copy"><h2 id="consent-title">Your privacy choices</h2>'
-    + '<p>We use necessary storage to remember your choices and confirm enquiries. With your permission, Google Analytics measures website use and Google Ads measures enquiries and contact clicks. You can choose each separately. Advertising personalization stays off. <a href="' + privacyUrl.href + '">Privacy policy</a></p></div>'
-    + '<div class="consent-options" id="consent-options" hidden><p><strong>Necessary storage · always on</strong><br>Remembers these choices for 180 days and temporarily confirms a successful enquiry.</p>'
+  panel.innerHTML = '<p class="consent-summary">Optional cookies help us measure visits and enquiries. <a href="' + privacyUrl.href + '">Privacy policy</a></p>'
+    + '<div class="consent-options" id="consent-options" hidden><h2>Your privacy choices</h2>'
+    + '<p>We use necessary storage to remember your choices and confirm enquiries. With your permission, Google Analytics measures website use and Google Ads measures enquiries and contact clicks. You can choose each separately. Advertising personalization stays off.</p>'
+    + '<p><strong>Necessary storage · always on</strong><br>Remembers these choices for 180 days and temporarily confirms a successful enquiry.</p>'
     + '<label><input type="checkbox" id="consent-analytics"> <span><strong>Analytics</strong><br>Allow Google Analytics to measure page visits and website use.</span></label>'
     + '<label><input type="checkbox" id="consent-advertising"> <span><strong>Advertising measurement</strong><br>Allow Google Ads conversion measurement. Advertising personalization stays off.</span></label></div>'
     + '<div class="consent-actions"><button type="button" data-consent="accept">Accept</button><button type="button" data-consent="reject">Reject optional</button>'
@@ -122,6 +123,7 @@
   window.addEventListener('resize', resize);
   function show(expanded) {
     if (!panel.contains(document.activeElement)) returnFocus = document.activeElement;
+    panel.classList.toggle('is-expanded', expanded);
     analyticsCheckbox.checked = allowed('analytics');
     advertisingCheckbox.checked = allowed('advertising');
     reloadNotice.hidden = !loaded;
@@ -132,12 +134,13 @@
     close.hidden = !choice;
     panel.hidden = false;
     document.documentElement.classList.add('consent-open');
+    document.documentElement.classList.toggle('consent-expanded', expanded);
     resize();
     if (expanded) analyticsCheckbox.focus({ preventScroll: true });
   }
   function hide() {
     panel.hidden = true;
-    document.documentElement.classList.remove('consent-open');
+    document.documentElement.classList.remove('consent-open', 'consent-expanded');
     resize();
     if (returnFocus && panel.contains(document.activeElement)) returnFocus.focus({ preventScroll: true });
   }
