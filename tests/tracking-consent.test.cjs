@@ -40,6 +40,7 @@ async function visit(page, path = '/') {
 }
 async function choose(page, value) {
   if (!await page.locator('.consent-panel').isVisible()) await page.locator('.footer-privacy [data-cookie-settings]').click();
+  if (value === 'preferences' && await page.locator('#consent-analytics').isVisible()) return;
   await page.locator(`[data-consent="${value}"]`).click();
 }
 async function fill(page, commercial = false) {
@@ -91,16 +92,16 @@ test('acceptance sets Consent Mode defaults first; preferences, withdrawal, cook
     assert.deepEqual(requests, []);
     await page.locator('[data-consent="preferences"]').click();
     assert.equal(await page.locator('#consent-advertising').isChecked(), false);
-    assert.equal(await page.locator('#consent-advertising').evaluate(el => el === document.activeElement), true);
+    assert.equal(await page.locator('#consent-analytics').evaluate(el => el === document.activeElement), true);
     await page.locator('#consent-advertising').check();
     await page.locator('[data-consent="save"]').click();
     await waitCount(requests, 1);
     const calls = await page.evaluate(() => window.dataLayer.map(args => Array.from(args)));
     assert.deepEqual(calls[0], ['consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' }]);
-    assert.equal(calls[2][1], 'update');
-    assert.equal(calls[2][2].ad_storage, 'granted');
-    assert.equal(calls[2][2].ad_personalization, 'denied');
-    assert.equal(calls[2][2].analytics_storage, 'denied');
+    const update = calls.find(call => call[0] === 'consent' && call[1] === 'update' && call[2].ad_storage === 'granted')[2];
+    assert.equal(update.ad_personalization, 'denied');
+    assert.equal(update.analytics_storage, 'denied');
+    assert.equal(calls.filter(call => call[0] === 'event' && call[1] === 'page_view').length, 0);
     assert.equal(calls.filter(call => call[0] === 'config').length, 1);
     await page.evaluate(() => { document.cookie = '_gcl_aw=test; path=/'; });
     await page.locator('.footer-privacy [data-cookie-settings]').click();
@@ -245,7 +246,7 @@ test('expired consent asks again; saved acceptance loads one tag on a new page',
     await visit(page, '/privacy-policy');
     await waitCount(requests, 2);
     assert.equal(await page.locator('.consent-panel').isVisible(), false);
-    await page.evaluate(key => localStorage.setItem(key, JSON.stringify({advertising: true, savedAt: Date.now() - 181 * 86400000})), consentKey);
+    await page.evaluate(key => localStorage.setItem(key, JSON.stringify({version: 2, analytics: true, advertising: true, savedAt: Date.now() - 181 * 86400000})), consentKey);
     await page.reload();
     assert.equal(await page.locator('.consent-panel').isVisible(), true);
     assert.equal(requests.length, 2);
@@ -386,4 +387,145 @@ test('missing or throwing tracking on thank-you cannot interrupt the confirmatio
       assert.equal(contrast, 'rgb(255, 255, 255)');
     } finally { await context.close(); }
   }
+});
+
+for (const [analytics, advertising] of [[false, false], [true, false], [false, true], [true, true]]) {
+  test(`separate preferences analytics=${analytics}, advertising=${advertising} persist without duplicate initialization or page views`, async () => {
+    const { context, page, requests, conversions, errors } = await setup();
+    try {
+      await visit(page);
+      await choose(page, 'preferences');
+      assert.equal(await page.locator('#consent-analytics').isChecked(), false);
+      assert.equal(await page.locator('#consent-advertising').isChecked(), false);
+      await page.locator('#consent-analytics').setChecked(analytics);
+      await page.locator('#consent-advertising').setChecked(advertising);
+      await choose(page, 'save');
+      for (const path of [null, '/areas/pretoria', '/privacy-policy', 'reload']) {
+        if (path === 'reload') await page.reload();
+        else if (path) await visit(page, path);
+        if (analytics || advertising) await page.waitForFunction(() => window.dataLayer.push.toString().includes('record'));
+        await choose(page, 'preferences');
+        assert.equal(await page.locator('#consent-analytics').isChecked(), analytics);
+        assert.equal(await page.locator('#consent-advertising').isChecked(), advertising);
+        await choose(page, 'save');
+        const calls = await page.evaluate(() => window.dataLayer.map(args => Array.from(args)));
+        const updates = calls.filter(call => call[0] === 'consent' && call[1] === 'update');
+        assert.deepEqual(updates.at(-1)[2], {
+          analytics_storage: analytics ? 'granted' : 'denied',
+          ad_storage: advertising ? 'granted' : 'denied',
+          ad_user_data: advertising ? 'granted' : 'denied', ad_personalization: 'denied'
+        });
+        assert.equal(calls.filter(call => call[0] === 'js').length, Number(analytics || advertising));
+        assert.deepEqual(calls.filter(call => call[0] === 'config').map(call => call.slice(1)), advertising ? [
+          ['AW-16967723902', { send_page_view: false, allow_google_signals: false, allow_ad_personalization_signals: false }]
+        ] : []);
+        assert.deepEqual(calls.filter(call => call[0] === 'event' && call[1] === 'page_view'), analytics ? [
+          ['event', 'page_view', { send_to: 'G-8BX38H8R3L' }]
+        ] : []);
+        assert.equal(await page.evaluate(() => window['ga-disable-G-8BX38H8R3L']), !analytics);
+        assert.equal(await page.evaluate(() => window['ga-disable-AW-16967723902']), !advertising);
+      }
+      assert.equal(requests.length, analytics || advertising ? 4 : 0);
+      await page.evaluate(() => document.addEventListener('click', event => event.preventDefault()));
+      await page.locator('a[href^="tel:"]').first().evaluate(el => el.click());
+      if (advertising) await waitCount(conversions, 1);
+      assert.equal(conversions.length, Number(advertising));
+      assert.deepEqual(errors, []);
+    } finally { await context.close(); }
+  });
+}
+
+test('old, incomplete, expired, future and malformed records ask again without assuming either permission', async () => {
+  const { context, page, requests } = await setup();
+  try {
+    await visit(page);
+    for (const record of [
+      { advertising: true, savedAt: Date.now() },
+      { advertising: false, savedAt: Date.now() },
+      { version: 2, advertising: true, savedAt: Date.now() },
+      { version: 2, analytics: 'true', advertising: true, savedAt: Date.now() },
+      { version: 2, analytics: true, advertising: true, savedAt: Date.now() - 181 * 86400000 },
+      { version: 2, analytics: true, advertising: true, savedAt: Date.now() + 60000 },
+      '{bad'
+    ]) {
+      await page.evaluate(({ key, record }) => localStorage.setItem(key, typeof record === 'string' ? record : JSON.stringify(record)), { key: consentKey, record });
+      await page.reload();
+      assert.equal(await page.locator('.consent-panel').isVisible(), true);
+      await choose(page, 'preferences');
+      assert.equal(await page.locator('#consent-analytics').isChecked(), false);
+      assert.equal(await page.locator('#consent-advertising').isChecked(), false);
+      assert.deepEqual(await page.evaluate(() => [epcConsent.allowsAnalytics(), epcConsent.allowsAdvertising()]), [false, false]);
+    }
+    assert.deepEqual(requests, []);
+    await choose(page, 'accept');
+    await waitCount(requests, 1);
+    const saved = await page.evaluate(key => JSON.parse(localStorage.getItem(key)), consentKey);
+    assert.equal(saved.version, 2);
+    assert.equal(saved.analytics, true);
+    assert.equal(saved.advertising, true);
+  } finally { await context.close(); }
+});
+
+for (const withdrawn of ['analytics', 'advertising']) test(`withdrawing ${withdrawn} stops that destination, clears only its cookies and preserves the other choice`, async () => {
+  const { context, page, requests, errors } = await setup();
+  try {
+    await visit(page);
+    await choose(page, 'accept');
+    await waitCount(requests, 1);
+    await page.evaluate(() => {
+      document.cookie = '_ga=test; path=/';
+      document.cookie = '_ga_8BX38H8R3L=test; path=/';
+      document.cookie = '_gcl_aw=test; path=/';
+    });
+    await choose(page, 'preferences');
+    await page.locator('#consent-' + withdrawn).uncheck();
+    await Promise.all([page.waitForEvent('load'), choose(page, 'save')]);
+    await waitCount(requests, 2);
+    assert.deepEqual(await page.evaluate(() => [epcConsent.allowsAnalytics(), epcConsent.allowsAdvertising()]), [withdrawn !== 'analytics', withdrawn !== 'advertising']);
+    const cookies = (await context.cookies()).map(cookie => cookie.name);
+    assert.equal(cookies.includes('_ga'), withdrawn !== 'analytics');
+    assert.equal(cookies.includes('_ga_8BX38H8R3L'), withdrawn !== 'analytics');
+    assert.equal(cookies.includes('_gcl_aw'), withdrawn !== 'advertising');
+    await Promise.all([page.waitForEvent('load'), choose(page, 'reject')]);
+    assert.equal(await page.locator('script[src*="googletagmanager.com"]').count(), 0);
+    assert.deepEqual((await context.cookies()).filter(cookie => /^_ga|^_gcl_/.test(cookie.name)), []);
+    await page.reload();
+    assert.equal(requests.length, 2);
+    assert.deepEqual(errors, []);
+  } finally { await context.close(); }
+});
+
+test('granting analytics after advertising sends one page view without loading or configuring a second tag', async () => {
+  const { context, page, requests } = await setup();
+  try {
+    await visit(page);
+    await choose(page, 'preferences');
+    await page.locator('#consent-advertising').check();
+    await choose(page, 'save');
+    await waitCount(requests, 1);
+    await choose(page, 'accept');
+    await choose(page, 'accept');
+    const calls = await page.evaluate(() => window.dataLayer.map(args => Array.from(args)));
+    assert.equal(calls.filter(call => call[0] === 'config').length, 1);
+    assert.equal(calls.filter(call => call[0] === 'event' && call[1] === 'page_view').length, 1);
+    assert.equal(requests.length, 1);
+  } finally { await context.close(); }
+});
+
+test('granting advertising after analytics configures Ads once without replaying the GA4 page view', async () => {
+  const { context, page, requests } = await setup();
+  try {
+    await visit(page);
+    await choose(page, 'preferences');
+    await page.locator('#consent-analytics').check();
+    await choose(page, 'save');
+    await waitCount(requests, 1);
+    await choose(page, 'accept');
+    await choose(page, 'accept');
+    const calls = await page.evaluate(() => window.dataLayer.map(args => Array.from(args)));
+    assert.deepEqual(calls.filter(call => call[0] === 'config').map(call => call[1]), ['AW-16967723902']);
+    assert.equal(calls.filter(call => call[0] === 'js').length, 1);
+    assert.equal(calls.filter(call => call[0] === 'event' && call[1] === 'page_view').length, 1);
+    assert.equal(requests.length, 1);
+  } finally { await context.close(); }
 });

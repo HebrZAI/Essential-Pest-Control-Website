@@ -16,6 +16,7 @@ body { padding-bottom: var(--consent-height, 0px); }
 .consent-options { max-width: 75ch; margin-top: 20px; font-size: .92rem; }
 .consent-options p { margin: 0 0 16px; }
 .consent-options label { display: flex; align-items: flex-start; gap: 12px; cursor: pointer; }
+.consent-options label + label { margin-top: 16px; }
 .consent-options input { flex: 0 0 auto; width: 22px; height: 22px; margin: 2px 0; accent-color: var(--forest); }
 .consent-open .whatsapp-float, .consent-open .quote-bar { visibility: hidden; pointer-events: none; }
 .consent-panel :focus-visible, .footer-privacy :focus-visible, .info-page a:focus-visible, .info-header a:focus-visible { outline: 3px solid var(--amber-deep); outline-offset: 4px; }

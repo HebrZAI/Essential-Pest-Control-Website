@@ -23,3 +23,13 @@ Set `QUOTE_TEST_URL` if the local server uses another address. No package manage
 `tracking-consent.test.cjs` covers all 32 pages: no Google requests before consent or after rejection; consent defaults, acceptance, saved choices, expiry, withdrawal and cookie cleanup; both enquiry variants with one thank-you conversion and a random transaction ID; replay prevention; malformed/expired receipts; contact-click separation; blocked storage and full quotas; cross-tab withdrawal; missing/throwing tracking; native confirmation fallback; privacy address; sitemap/robots; keyboard access and responsive layouts. Google script requests are mocked, so live tag behavior and Ads attribution still require post-deployment Tag Assistant/account checks.
 
 If using an existing Chromium installation, set `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` to its executable path.
+
+GA4 consent regression checks cover all four Analytics/Advertising combinations, one explicit GA4 page view per page after analytics acceptance, one shared tag initialization, upgrades in either order, selective withdrawal and cookie cleanup, saved legacy records and malformed/expired records.
+
+To test Google’s actual shared tag and its current remote configuration, enable the optional integration suite while the local server is running:
+
+```sh
+GOOGLE_TAG_TEST=1 NODE_PATH=/tmp/epc-test-tools/node_modules PLAYWRIGHT_BROWSERS_PATH=/tmp/epc-test-browsers node --test tests/google-tag.test.cjs
+```
+
+This suite allows only Google tag script downloads. It serves the local pages at a virtual production origin and intercepts all collection and conversion requests, including the existing thank-you URL action and the phone/WhatsApp labels. No measurement reaches Google. It checks network payloads rather than GA4 reporting or Ads attribution. The `QUOTE_TEST_URL` override can point at production to check the deployed site using the same interception.
