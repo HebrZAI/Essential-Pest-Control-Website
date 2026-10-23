@@ -4,8 +4,7 @@
   const receiptLifetime = 30 * 60 * 1000;
   const formAction = 'AW-16967723902/SPEICIfdrfQcEP7W65o_';
   const whatsappAction = 'AW-16967723902/tS-cCI3drfQcEP7W65o_';
-  // Supply the dedicated Secondary phone action's label after creating it in Google Ads.
-  const phoneConversionLabel = '';
+  const phoneConversionLabel = 'svwUCOKJ66YdEP7W65o_';
 
   function canTrack() {
     return window.epcConsent && window.epcConsent.allowsAdvertising() && typeof window.gtag === 'function';

@@ -211,7 +211,7 @@ test('blocked storage leaves the successful inline fallback available without me
   } finally { await context.close(); }
 });
 
-test('contact clicks need consent and use their own actions; phone tracking stays disabled without a label', async () => {
+test('contact clicks need consent and use their own actions', async () => {
   const { context, page, conversions } = await setup();
   try {
     await visit(page);
@@ -221,12 +221,17 @@ test('contact clicks need consent and use their own actions; phone tracking stay
     await fire('a[href*="wa.me"]');
     await fire('a[href^="tel:"]');
     assert.deepEqual(conversions, []);
+    await choose(page, 'reject');
+    await fire('a[href*="wa.me"]');
+    await fire('a[href^="tel:"]');
+    assert.deepEqual(conversions, []);
     await choose(page, 'accept');
     await fire('a[href*="wa.me"]');
     await waitCount(conversions, 1);
     assert.equal(conversions[0].send_to, 'AW-16967723902/tS-cCI3drfQcEP7W65o_');
     await fire('a[href^="tel:"]');
-    assert.equal(conversions.length, 1);
+    await waitCount(conversions, 2);
+    assert.equal(conversions[1].send_to, 'AW-16967723902/svwUCOKJ66YdEP7W65o_');
     assert.ok(conversions.every(event => event.send_to !== formAction));
   } finally { await context.close(); }
 });
@@ -277,25 +282,38 @@ test('privacy address, robots, sitemap, keyboard and mobile/desktop layouts are 
   } finally { await context.close(); }
 });
 
-test('a configured phone action sends only a consent-gated phone conversion', async () => {
-  const { context, page, conversions } = await setup();
+test('every phone link on all 32 pages sends one dedicated conversion and preserves default behaviour', async () => {
+  const { context, page, conversions, errors } = await setup();
+  const files = readdirSync(root).filter(f => f.endsWith('.html')).concat(
+    ['areas', 'blog'].flatMap(dir => readdirSync(join(root, dir)).filter(f => f.endsWith('.html')).map(f => dir + '/' + f)));
   try {
-    await page.route('**/google-ads-conversions.js', route => route.fulfill({
-      contentType: 'text/javascript',
-      body: readFileSync(join(root, 'google-ads-conversions.js'), 'utf8').replace("const phoneConversionLabel = '';", "const phoneConversionLabel = 'test-phone-label';")
-    }));
     await visit(page);
-    await page.evaluate(() => document.addEventListener('click', event => {
-      if (event.target.closest('a[href^="tel:"]')) event.preventDefault();
-    }));
-    const fire = () => page.locator('a[href^="tel:"]').first().evaluate(el => el.dispatchEvent(new MouseEvent('click', {bubbles: true, cancelable: true})));
-    await fire();
-    assert.deepEqual(conversions, []);
     await choose(page, 'accept');
-    await fire();
-    await waitCount(conversions, 1);
-    assert.equal(conversions[0].send_to, 'AW-16967723902/test-phone-label');
-    assert.notEqual(conversions[0].send_to, formAction);
+    assert.equal(files.length, 32);
+    let clicks = 0;
+    for (const file of files) {
+      await visit(page, '/' + file);
+      await page.evaluate(() => {
+        window.phoneDefaultsPrevented = [];
+        // Observe normal behaviour after the tracker, then suppress the test's dialler navigation.
+        document.addEventListener('click', event => {
+          if (event.target.closest('a[href^="tel:"]')) {
+            window.phoneDefaultsPrevented.push(event.defaultPrevented);
+            event.preventDefault();
+          }
+        });
+      });
+      const links = page.locator('a[href^="tel:"]');
+      const count = await links.count();
+      assert.ok(count > 0, file);
+      for (const link of await links.all()) {
+        await link.evaluate(el => (el.firstElementChild || el).dispatchEvent(new MouseEvent('click', {bubbles: true, cancelable: true})));
+        await waitCount(conversions, ++clicks);
+        assert.deepEqual(conversions[clicks - 1], { send_to: 'AW-16967723902/svwUCOKJ66YdEP7W65o_' }, file);
+      }
+      assert.deepEqual(await page.evaluate(() => window.phoneDefaultsPrevented), Array(count).fill(false), file);
+    }
+    assert.deepEqual(errors, []);
   } finally { await context.close(); }
 });
 
